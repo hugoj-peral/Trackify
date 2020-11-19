@@ -27,6 +27,8 @@
 		9AC6CD5625668B51002DCDE4 /* DashboardPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */; };
 		9AC6CD5C25668D3A002DCDE4 /* DashboardViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */; };
 		9AC6CD6125668FAA002DCDE4 /* TableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */; };
+		9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD6C25669905002DCDE4 /* DashboardHeader.swift */; };
+		9AC6CD7225669FD4002DCDE4 /* MoneyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7125669FD4002DCDE4 /* MoneyAccount.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterTest.swift; sourceTree = "<group>"; };
 		9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewControllerTest.swift; sourceTree = "<group>"; };
 		9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMock.swift; sourceTree = "<group>"; };
+		9AC6CD6C25669905002DCDE4 /* DashboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeader.swift; sourceTree = "<group>"; };
+		9AC6CD7125669FD4002DCDE4 /* MoneyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyAccount.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 		9A0394F02566614C00574C13 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6CD7025669FBB002DCDE4 /* Model */,
 				9A9FE4A9256669E500861719 /* Extensions */,
 				9A9FE4A22566687A00861719 /* Dashboard */,
 				9A039538256663A900574C13 /* CoreData */,
@@ -188,6 +193,7 @@
 		9A9FE4B725666D7300861719 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6CD6B256698A2002DCDE4 /* ReusableViews */,
 				9A9FE4A3256668AE00861719 /* DashboardViewController.swift */,
 				9A9FE4BD25666E7C00861719 /* DashboardViewProtocol.swift */,
 			);
@@ -242,6 +248,22 @@
 				9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		9AC6CD6B256698A2002DCDE4 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD6C25669905002DCDE4 /* DashboardHeader.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		9AC6CD7025669FBB002DCDE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD7125669FD4002DCDE4 /* MoneyAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -428,7 +450,9 @@
 				9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */,
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
 				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
+				9AC6CD7225669FD4002DCDE4 /* MoneyAccount.swift in Sources */,
 				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
+				9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */,
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,
 				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,

@@ -18,10 +18,14 @@ extension DashboardPresenter: DashboardPresenterProtocol {
     }
     
     func numberOfMoneyAccounts() -> Int {
-        return 0
+        return MoneyAccount.allCases.count
     }
     
     func numberOfTransactionsPerMoneyAccount() -> Int {
         return 0
+    }
+    
+    func fill(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount) {
+        header.display(account: moneyAccount.description.localized, balance: "300€")
     }
 }

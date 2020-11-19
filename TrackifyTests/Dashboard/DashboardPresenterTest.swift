@@ -39,10 +39,18 @@ class DashboardPresenterTest: XCTestCase {
     }
     
     func testNumberOfMoneyAccounts() {
-        XCTAssert(sut.numberOfMoneyAccounts() == 0)
+        XCTAssert(sut.numberOfMoneyAccounts() == MoneyAccount.allCases.count)
     }
     
     func testNumberOfTransactionsPerMoneyAccount() {
         XCTAssert(sut.numberOfTransactionsPerMoneyAccount() == 0)
+    }
+    
+    func testFillHeader_WithMoneyAccount() {
+        let header = DashboardHeaderRepresentableMock()
+        
+        sut.fill(header: header, moneyAccount: .cash)
+        
+        XCTAssert(header.displayAccountBalanceCalled)
     }
 }

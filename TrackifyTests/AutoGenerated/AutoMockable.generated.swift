@@ -26,6 +26,26 @@ import AppKit
 
 
 
+class DashboardHeaderRepresentableMock: DashboardHeaderRepresentable {
+
+    //MARK: - display
+
+    var displayAccountBalanceCallsCount = 0
+    var displayAccountBalanceCalled: Bool {
+        return displayAccountBalanceCallsCount > 0
+    }
+    var displayAccountBalanceReceivedArguments: (account: String, balance: String)?
+    var displayAccountBalanceReceivedInvocations: [(account: String, balance: String)] = []
+    var displayAccountBalanceClosure: ((String, String) -> Void)?
+
+    func display(account: String, balance: String) {
+        displayAccountBalanceCallsCount += 1
+        displayAccountBalanceReceivedArguments = (account: account, balance: balance)
+        displayAccountBalanceReceivedInvocations.append((account: account, balance: balance))
+        displayAccountBalanceClosure?(account, balance)
+    }
+
+}
 class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
 
     //MARK: - viewDidLoad
@@ -67,6 +87,23 @@ class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
     func numberOfTransactionsPerMoneyAccount() -> Int {
         numberOfTransactionsPerMoneyAccountCallsCount += 1
         return numberOfTransactionsPerMoneyAccountClosure.map({ $0() }) ?? numberOfTransactionsPerMoneyAccountReturnValue
+    }
+
+    //MARK: - fill
+
+    var fillHeaderMoneyAccountCallsCount = 0
+    var fillHeaderMoneyAccountCalled: Bool {
+        return fillHeaderMoneyAccountCallsCount > 0
+    }
+    var fillHeaderMoneyAccountReceivedArguments: (header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount)?
+    var fillHeaderMoneyAccountReceivedInvocations: [(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount)] = []
+    var fillHeaderMoneyAccountClosure: ((DashboardHeaderRepresentable, MoneyAccount) -> Void)?
+
+    func fill(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount) {
+        fillHeaderMoneyAccountCallsCount += 1
+        fillHeaderMoneyAccountReceivedArguments = (header: header, moneyAccount: moneyAccount)
+        fillHeaderMoneyAccountReceivedInvocations.append((header: header, moneyAccount: moneyAccount))
+        fillHeaderMoneyAccountClosure?(header, moneyAccount)
     }
 
 }

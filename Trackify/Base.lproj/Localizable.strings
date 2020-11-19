@@ -6,3 +6,6 @@
   
 */
 "dashboard_title" = "Dashboard";
+"cash" = "Cash";
+"credit card" = "Credit Card";
+"bank account" = "Bank Account";
