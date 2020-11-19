@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39807E118BAF1DE9C5FADEF5 /* Pods_Trackify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B13AB24C6060AD288E0ACBE /* Pods_Trackify.framework */; };
 		9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394F12566614C00574C13 /* AppDelegate.swift */; };
-		9A0394F62566614C00574C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394F52566614C00574C13 /* ViewController.swift */; };
 		9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */; };
 		9A0394FE2566614D00574C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0394FD2566614D00574C13 /* Assets.xcassets */; };
 		9A0395012566614D00574C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0394FF2566614D00574C13 /* LaunchScreen.storyboard */; };
-		9A03950C2566614D00574C13 /* TrackifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A03950B2566614D00574C13 /* TrackifyTests.swift */; };
 		9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A03953B2566641500574C13 /* CoreDataStack.swift */; };
+		9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4A3256668AE00861719 /* DashboardViewController.swift */; };
+		9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4AA25666A0900861719 /* UIWindow+Factory.swift */; };
+		9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4AF25666B2200861719 /* DashboardAssembler.swift */; };
+		9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4B325666BA300861719 /* AppAssembler.swift */; };
+		9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4B925666DE100861719 /* DashboardPresenterProtocol.swift */; };
+		9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4BD25666E7C00861719 /* DashboardViewProtocol.swift */; };
+		9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4C725666F1400861719 /* DashboardPresenter.swift */; };
+		9A9FE4D3256680C100861719 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A9FE4D1256680C100861719 /* Localizable.strings */; };
+		9A9FE4D82566817000861719 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4D72566817000861719 /* String+Localized.swift */; };
+		9AC6CD3D2566895B002DCDE4 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD3C2566895B002DCDE4 /* AutoMockable.generated.swift */; };
+		9AC6CD4D25668A54002DCDE4 /* AutoMockable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 9AC6CD4C25668A54002DCDE4 /* AutoMockable.stencil */; };
+		9AC6CD5625668B51002DCDE4 /* DashboardPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */; };
+		9AC6CD5C25668D3A002DCDE4 /* DashboardViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */; };
+		9AC6CD6125668FAA002DCDE4 /* TableViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */; };
+		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +41,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B13AB24C6060AD288E0ACBE /* Pods_Trackify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trackify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E362D0C452923ECE64A6595 /* Pods-TrackifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6804AF631EF7235511C7C007 /* Pods-Trackify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.release.xcconfig"; path = "Target Support Files/Pods-Trackify/Pods-Trackify.release.xcconfig"; sourceTree = "<group>"; };
+		8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812ED140DA9270735C704333 /* Pods-Trackify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.debug.xcconfig"; path = "Target Support Files/Pods-Trackify/Pods-Trackify.debug.xcconfig"; sourceTree = "<group>"; };
 		9A0394EE2566614C00574C13 /* Trackify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0394F12566614C00574C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A0394F52566614C00574C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A0394FB2566614C00574C13 /* Trackify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trackify.xcdatamodel; sourceTree = "<group>"; };
 		9A0394FD2566614D00574C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A0395002566614D00574C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A0395022566614D00574C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A0395072566614D00574C13 /* TrackifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A03950B2566614D00574C13 /* TrackifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackifyTests.swift; sourceTree = "<group>"; };
 		9A03950D2566614D00574C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A03953B2566641500574C13 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9A9FE4A3256668AE00861719 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		9A9FE4AA25666A0900861719 /* UIWindow+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Factory.swift"; sourceTree = "<group>"; };
+		9A9FE4AF25666B2200861719 /* DashboardAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAssembler.swift; sourceTree = "<group>"; };
+		9A9FE4B325666BA300861719 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
+		9A9FE4B925666DE100861719 /* DashboardPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterProtocol.swift; sourceTree = "<group>"; };
+		9A9FE4BD25666E7C00861719 /* DashboardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewProtocol.swift; sourceTree = "<group>"; };
+		9A9FE4C725666F1400861719 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		9A9FE4D2256680C100861719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9A9FE4D72566817000861719 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		9AC6CD3C2566895B002DCDE4 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		9AC6CD4C25668A54002DCDE4 /* AutoMockable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterTest.swift; sourceTree = "<group>"; };
+		9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewControllerTest.swift; sourceTree = "<group>"; };
+		9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMock.swift; sourceTree = "<group>"; };
+		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39807E118BAF1DE9C5FADEF5 /* Pods_Trackify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +85,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		694AF2077801FCA11A7ED2DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B13AB24C6060AD288E0ACBE /* Pods_Trackify.framework */,
+				8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9A0394E52566614C00574C13 = {
 			isa = PBXGroup;
 			children = (
 				9A0394F02566614C00574C13 /* Trackify */,
 				9A03950A2566614D00574C13 /* TrackifyTests */,
 				9A0394EF2566614C00574C13 /* Products */,
+				DD2042E9BBC5574812027CC5 /* Pods */,
+				694AF2077801FCA11A7ED2DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +124,12 @@
 		9A0394F02566614C00574C13 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
+				9A9FE4A9256669E500861719 /* Extensions */,
+				9A9FE4A22566687A00861719 /* Dashboard */,
 				9A039538256663A900574C13 /* CoreData */,
 				9A0394F12566614C00574C13 /* AppDelegate.swift */,
-				9A0394F52566614C00574C13 /* ViewController.swift */,
+				9A9FE4B325666BA300861719 /* AppAssembler.swift */,
+				9A9FE4D62566812600861719 /* Strings */,
 				9A0394FD2566614D00574C13 /* Assets.xcassets */,
 				9A0394FF2566614D00574C13 /* LaunchScreen.storyboard */,
 				9A0395022566614D00574C13 /* Info.plist */,
@@ -92,7 +140,10 @@
 		9A03950A2566614D00574C13 /* TrackifyTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A03950B2566614D00574C13 /* TrackifyTests.swift */,
+				9AC6CD5F25668E6F002DCDE4 /* Mock */,
+				9AC6CD5425668B35002DCDE4 /* Dashboard */,
+				9AC6CD4B25668A54002DCDE4 /* Templates */,
+				9ABA80AD256684E000561B30 /* AutoGenerated */,
 				9A03950D2566614D00574C13 /* Info.plist */,
 			);
 			path = TrackifyTests;
@@ -107,6 +158,103 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		9A9FE4A22566687A00861719 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4AE25666B0F00861719 /* Assembler */,
+				9A9FE4B725666D7300861719 /* View */,
+				9A9FE4B825666D7D00861719 /* Presenter */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		9A9FE4A9256669E500861719 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4AA25666A0900861719 /* UIWindow+Factory.swift */,
+				9A9FE4D72566817000861719 /* String+Localized.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A9FE4AE25666B0F00861719 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4AF25666B2200861719 /* DashboardAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		9A9FE4B725666D7300861719 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4A3256668AE00861719 /* DashboardViewController.swift */,
+				9A9FE4BD25666E7C00861719 /* DashboardViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A9FE4B825666D7D00861719 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4B925666DE100861719 /* DashboardPresenterProtocol.swift */,
+				9A9FE4C725666F1400861719 /* DashboardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A9FE4D62566812600861719 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4D1256680C100861719 /* Localizable.strings */,
+			);
+			name = Strings;
+			sourceTree = "<group>";
+		};
+		9ABA80AD256684E000561B30 /* AutoGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD3C2566895B002DCDE4 /* AutoMockable.generated.swift */,
+			);
+			path = AutoGenerated;
+			sourceTree = "<group>";
+		};
+		9AC6CD4B25668A54002DCDE4 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD4C25668A54002DCDE4 /* AutoMockable.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		9AC6CD5425668B35002DCDE4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */,
+				9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		9AC6CD5F25668E6F002DCDE4 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD6025668FAA002DCDE4 /* TableViewMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		DD2042E9BBC5574812027CC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				812ED140DA9270735C704333 /* Pods-Trackify.debug.xcconfig */,
+				6804AF631EF7235511C7C007 /* Pods-Trackify.release.xcconfig */,
+				4E362D0C452923ECE64A6595 /* Pods-TrackifyTests.debug.xcconfig */,
+				EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,6 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A03951B2566614D00574C13 /* Build configuration list for PBXNativeTarget "Trackify" */;
 			buildPhases = (
+				C9F6E313E7D1F394C5BADA07 /* [CP] Check Pods Manifest.lock */,
 				9A0394EA2566614C00574C13 /* Sources */,
 				9A0394EB2566614C00574C13 /* Frameworks */,
 				9A0394EC2566614C00574C13 /* Resources */,
@@ -131,6 +280,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A03951E2566614D00574C13 /* Build configuration list for PBXNativeTarget "TrackifyTests" */;
 			buildPhases = (
+				98702A58B272287798F66482 /* [CP] Check Pods Manifest.lock */,
+				9ABA80B02566853100561B30 /* Sourcery */,
 				9A0395032566614D00574C13 /* Sources */,
 				9A0395042566614D00574C13 /* Frameworks */,
 				9A0395052566614D00574C13 /* Resources */,
@@ -188,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0395012566614D00574C13 /* LaunchScreen.storyboard in Resources */,
+				9A9FE4D3256680C100861719 /* Localizable.strings in Resources */,
 				9A0394FE2566614D00574C13 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,18 +348,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6CD4D25668A54002DCDE4 /* AutoMockable.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98702A58B272287798F66482 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackifyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ABA80B02566853100561B30 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/Sourcery/bin/sourcery --sources $(pwd)/Trackify --templates $(pwd)/TrackifyTests/Templates --output $(pwd)/TrackifyTests/AutoGenerated\n";
+		};
+		C9F6E313E7D1F394C5BADA07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trackify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A0394EA2566614C00574C13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0394F62566614C00574C13 /* ViewController.swift in Sources */,
+				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
+				9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */,
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
+				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
+				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
+				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
+				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,
+				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,
+				9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */,
 				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
 				9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */,
 			);
@@ -217,7 +442,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A03950C2566614D00574C13 /* TrackifyTests.swift in Sources */,
+				9AC6CD3D2566895B002DCDE4 /* AutoMockable.generated.swift in Sources */,
+				9AC6CD5C25668D3A002DCDE4 /* DashboardViewControllerTest.swift in Sources */,
+				9AC6CD5625668B51002DCDE4 /* DashboardPresenterTest.swift in Sources */,
+				9AC6CD6125668FAA002DCDE4 /* TableViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +466,14 @@
 				9A0395002566614D00574C13 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9A9FE4D1256680C100861719 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A9FE4D2256680C100861719 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -361,6 +597,7 @@
 		};
 		9A03951C2566614D00574C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812ED140DA9270735C704333 /* Pods-Trackify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -380,6 +617,7 @@
 		};
 		9A03951D2566614D00574C13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6804AF631EF7235511C7C007 /* Pods-Trackify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,6 +637,7 @@
 		};
 		9A03951F2566614D00574C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E362D0C452923ECE64A6595 /* Pods-TrackifyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -413,13 +652,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.TrackifyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackify.app/Trackify";
 			};
 			name = Debug;
 		};
 		9A0395202566614D00574C13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -434,7 +674,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.TrackifyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackify.app/Trackify";
 			};
 			name = Release;
