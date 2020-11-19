@@ -10,6 +10,11 @@ import Foundation
 final class DashboardPresenter {
     weak var view: DashboardViewProtocol?
     var accountsNames: [String] = ["Cash", "Credit Card", "Bank Account"]
+    let router: DashboardRouterProtocol
+    
+    init(router: DashboardRouterProtocol) {
+        self.router = router
+    }
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
@@ -32,5 +37,9 @@ extension DashboardPresenter: DashboardPresenterProtocol {
     
     func fill(cell: DashboardCellRepresentable, section: Int, row: Int) {
         cell.display(category: "Home", date: "20/09/2020 at 5:30pm", amount: "-300€", positive: false)
+    }
+    
+    func addTransactionAction() {
+        router.routeToAddTransaction()
     }
 }

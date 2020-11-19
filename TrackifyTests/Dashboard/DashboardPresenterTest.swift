@@ -12,15 +12,18 @@ class DashboardPresenterTest: XCTestCase {
     
     var sut: DashboardPresenter!
     var view: DashboardViewProtocolMock!
+    var router: DashboardRouterProtocolMock!
 
     override func setUpWithError() throws {
-        sut = DashboardPresenter()
+        router = DashboardRouterProtocolMock()
+        sut = DashboardPresenter(router: router)
         view = DashboardViewProtocolMock()
         sut.view = view
     }
 
     override func tearDownWithError() throws {
         view = nil
+        router = nil
         sut = nil
     }
 
@@ -60,5 +63,11 @@ class DashboardPresenterTest: XCTestCase {
         sut.fill(cell: cell, section: 0, row: 0)
         
         XCTAssert(cell.displayCategoryDateAmountPositiveCalled)
+    }
+    
+    func testAddTransactionAction_RouteToAddTransaction() {
+        sut.addTransactionAction()
+        
+        XCTAssert(router.routeToAddTransactionCalled)
     }
 }

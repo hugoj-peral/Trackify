@@ -63,4 +63,10 @@ class DashboardViewControllerTest: XCTestCase {
         
         XCTAssert(presenter.viewDidLoadCalled)
     }
+    
+    func testAddTapped_AddTransactionAction() {
+        sut.addTapped(UIButton())
+        
+        XCTAssert(presenter.addTransactionActionCalled)
+    }
 }

@@ -31,6 +31,9 @@
 		9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7125669FD4002DCDE4 /* Account.swift */; };
 		9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD752566A5C9002DCDE4 /* DashboardCell.swift */; };
 		9AC6CD7C2566CC96002DCDE4 /* UILabel+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */; };
+		9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */; };
+		9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */; };
+		9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		9AC6CD7125669FD4002DCDE4 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9AC6CD752566A5C9002DCDE4 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Font.swift"; sourceTree = "<group>"; };
+		9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigableView.swift"; sourceTree = "<group>"; };
+		9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouterProtocol.swift; sourceTree = "<group>"; };
+		9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				9A9FE4AE25666B0F00861719 /* Assembler */,
+				9AC6CD852566DBE8002DCDE4 /* Router */,
 				9A9FE4B725666D7300861719 /* View */,
 				9A9FE4B825666D7D00861719 /* Presenter */,
 			);
@@ -183,6 +190,7 @@
 				9A9FE4AA25666A0900861719 /* UIWindow+Factory.swift */,
 				9A9FE4D72566817000861719 /* String+Localized.swift */,
 				9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */,
+				9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +278,15 @@
 				9AC6CD7125669FD4002DCDE4 /* Account.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9AC6CD852566DBE8002DCDE4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */,
+				9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -459,7 +476,10 @@
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
 				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
 				9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */,
+				9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */,
+				9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */,
 				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
+				9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */,
 				9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */,
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,

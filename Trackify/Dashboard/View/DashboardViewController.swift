@@ -39,7 +39,7 @@ final class DashboardViewController: UITableViewController {
     
     // MARK: IBActions
     @IBAction func addTapped(_ sender: Any) {
-        print("Add tapped")
+        presenter.addTransactionAction()
     }
     
     // MARK: - Table view data source

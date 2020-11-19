@@ -143,6 +143,35 @@ class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
         fillCellSectionRowClosure?(cell, section, row)
     }
 
+    //MARK: - addTransactionAction
+
+    var addTransactionActionCallsCount = 0
+    var addTransactionActionCalled: Bool {
+        return addTransactionActionCallsCount > 0
+    }
+    var addTransactionActionClosure: (() -> Void)?
+
+    func addTransactionAction() {
+        addTransactionActionCallsCount += 1
+        addTransactionActionClosure?()
+    }
+
+}
+class DashboardRouterProtocolMock: DashboardRouterProtocol {
+
+    //MARK: - routeToAddTransaction
+
+    var routeToAddTransactionCallsCount = 0
+    var routeToAddTransactionCalled: Bool {
+        return routeToAddTransactionCallsCount > 0
+    }
+    var routeToAddTransactionClosure: (() -> Void)?
+
+    func routeToAddTransaction() {
+        routeToAddTransactionCallsCount += 1
+        routeToAddTransactionClosure?()
+    }
+
 }
 class DashboardViewProtocolMock: DashboardViewProtocol {
 

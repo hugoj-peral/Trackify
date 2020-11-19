@@ -8,15 +8,15 @@
 import UIKit
 
 extension UILabel {
-    static func makeTitle(textAlignment: NSTextAlignment = .left) -> UILabel {
+    class func makeTitle(textAlignment: NSTextAlignment = .left) -> UILabel {
        return makeLabel(textAlignment: textAlignment, font: .boldSystemFont(ofSize: 17))
     }
     
-    static func makeSubTitle(textAlignment: NSTextAlignment = .left) -> UILabel {
+    class func makeSubTitle(textAlignment: NSTextAlignment = .left) -> UILabel {
        return makeLabel(textAlignment: textAlignment, font: .systemFont(ofSize: 13))
     }
     
-    static func makeLabel(textAlignment: NSTextAlignment, font: UIFont) -> UILabel {
+    class func makeLabel(textAlignment: NSTextAlignment, font: UIFont) -> UILabel {
         let label = UILabel()
         label.font = font
         label.textAlignment = textAlignment

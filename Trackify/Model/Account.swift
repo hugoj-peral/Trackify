@@ -10,5 +10,4 @@ import Foundation
 struct Account {
     let name: String
     let id: Int
-    
 }

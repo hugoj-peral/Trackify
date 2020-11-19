@@ -9,18 +9,25 @@ import Foundation
 
 protocol DashboardAssembler {
     func resolve() -> DashboardViewController
-    func resolve() -> DashboardPresenter
+    func resolve(router: DashboardRouter) -> DashboardPresenter
+    func resolve() -> DashboardRouter
 }
 
 extension DashboardAssembler {
     func resolve() -> DashboardViewController {
-        let presenter: DashboardPresenter = resolve()
+        let router: DashboardRouter = resolve()
+        let presenter: DashboardPresenter = resolve(router: router)
         let view: DashboardViewController = DashboardViewController(presenter: presenter)
         presenter.view = view
+        router.view = view
         return view
     }
     
-    func resolve() -> DashboardPresenter {
-        return DashboardPresenter()
+    func resolve(router: DashboardRouter) -> DashboardPresenter {
+        return DashboardPresenter(router: router)
+    }
+    
+    func resolve() -> DashboardRouter {
+        return DashboardRouter()
     }
 }
