@@ -9,6 +9,7 @@ import Foundation
 
 final class DashboardPresenter {
     weak var view: DashboardViewProtocol?
+    var accountsNames: [String] = ["Cash", "Credit Card", "Bank Account"]
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
@@ -18,14 +19,18 @@ extension DashboardPresenter: DashboardPresenterProtocol {
     }
     
     func numberOfMoneyAccounts() -> Int {
-        return MoneyAccount.allCases.count
+        return accountsNames.count
     }
     
     func numberOfTransactionsPerMoneyAccount() -> Int {
-        return 0
+        return 10
     }
     
-    func fill(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount) {
-        header.display(account: moneyAccount.description.localized, balance: "300€")
+    func fill(header: DashboardHeaderRepresentable, section: Int) {
+        header.display(account: accountsNames[section], balance: "300€")
+    }
+    
+    func fill(cell: DashboardCellRepresentable, section: Int, row: Int) {
+        cell.display(category: "Home", date: "20/09/2020 at 5:30pm", amount: "-300€", positive: false)
     }
 }

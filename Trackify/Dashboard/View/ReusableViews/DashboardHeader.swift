@@ -12,9 +12,9 @@ protocol DashboardHeaderRepresentable {
     func display(account: String, balance: String)
 }
 
-class DashboardHeader: UITableViewHeaderFooterView {
-    let account = UILabel()
-    let balance = UILabel()
+final class DashboardHeader: UITableViewHeaderFooterView {
+    let account: UILabel = UILabel.makeTitle()
+    let balance: UILabel = UILabel.makeTitle(textAlignment: .right)
 
     override init(reuseIdentifier: String?) {
             super.init(reuseIdentifier: reuseIdentifier)

@@ -34,6 +34,7 @@ final class DashboardViewController: UITableViewController {
     
     func registerReusableViews() {
         tableView.register(DashboardHeader.self, forHeaderFooterViewReuseIdentifier: String(describing: DashboardHeader.self))
+        tableView.register(DashboardCell.self, forCellReuseIdentifier: String(describing: DashboardCell.self))
     }
     
     // MARK: IBActions
@@ -51,11 +52,17 @@ final class DashboardViewController: UITableViewController {
         return presenter.numberOfTransactionsPerMoneyAccount()
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DashboardCell.self), for: indexPath) as! DashboardCell
+        presenter.fill(cell: cell, section: indexPath.section, row: indexPath.row)
+        return cell
+    }
+    
     //MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:String(describing: DashboardHeader.self)) as! DashboardHeader
-        presenter.fill(header: view, moneyAccount: MoneyAccount.allCases[section])
+        presenter.fill(header: view, section: section)
         return view
     }
 }

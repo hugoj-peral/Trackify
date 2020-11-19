@@ -1,5 +1,5 @@
 //
-//  AppAssembler.swift
+//  Account.swift
 //  Trackify
 //
 //  Created by Hugo Peral on 19/11/2020.
@@ -7,4 +7,8 @@
 
 import Foundation
 
-final class AppAssembler: DashboardAssembler {}
+struct Account {
+    let name: String
+    let id: Int
+    
+}

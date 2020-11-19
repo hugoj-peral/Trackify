@@ -12,5 +12,6 @@ protocol DashboardPresenterProtocol: AnyObject {
     func viewDidLoad()
     func numberOfMoneyAccounts() -> Int
     func numberOfTransactionsPerMoneyAccount() -> Int
-    func fill(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount)
+    func fill(header: DashboardHeaderRepresentable, section: Int)
+    func fill(cell: DashboardCellRepresentable, section: Int, row: Int)
 }

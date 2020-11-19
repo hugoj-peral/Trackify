@@ -26,6 +26,26 @@ import AppKit
 
 
 
+class DashboardCellRepresentableMock: DashboardCellRepresentable {
+
+    //MARK: - display
+
+    var displayCategoryDateAmountPositiveCallsCount = 0
+    var displayCategoryDateAmountPositiveCalled: Bool {
+        return displayCategoryDateAmountPositiveCallsCount > 0
+    }
+    var displayCategoryDateAmountPositiveReceivedArguments: (category: String, date: String, amount: String, positive: Bool)?
+    var displayCategoryDateAmountPositiveReceivedInvocations: [(category: String, date: String, amount: String, positive: Bool)] = []
+    var displayCategoryDateAmountPositiveClosure: ((String, String, String, Bool) -> Void)?
+
+    func display(category: String, date: String, amount: String, positive: Bool) {
+        displayCategoryDateAmountPositiveCallsCount += 1
+        displayCategoryDateAmountPositiveReceivedArguments = (category: category, date: date, amount: amount, positive: positive)
+        displayCategoryDateAmountPositiveReceivedInvocations.append((category: category, date: date, amount: amount, positive: positive))
+        displayCategoryDateAmountPositiveClosure?(category, date, amount, positive)
+    }
+
+}
 class DashboardHeaderRepresentableMock: DashboardHeaderRepresentable {
 
     //MARK: - display
@@ -91,19 +111,36 @@ class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
 
     //MARK: - fill
 
-    var fillHeaderMoneyAccountCallsCount = 0
-    var fillHeaderMoneyAccountCalled: Bool {
-        return fillHeaderMoneyAccountCallsCount > 0
+    var fillHeaderSectionCallsCount = 0
+    var fillHeaderSectionCalled: Bool {
+        return fillHeaderSectionCallsCount > 0
     }
-    var fillHeaderMoneyAccountReceivedArguments: (header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount)?
-    var fillHeaderMoneyAccountReceivedInvocations: [(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount)] = []
-    var fillHeaderMoneyAccountClosure: ((DashboardHeaderRepresentable, MoneyAccount) -> Void)?
+    var fillHeaderSectionReceivedArguments: (header: DashboardHeaderRepresentable, section: Int)?
+    var fillHeaderSectionReceivedInvocations: [(header: DashboardHeaderRepresentable, section: Int)] = []
+    var fillHeaderSectionClosure: ((DashboardHeaderRepresentable, Int) -> Void)?
 
-    func fill(header: DashboardHeaderRepresentable, moneyAccount: MoneyAccount) {
-        fillHeaderMoneyAccountCallsCount += 1
-        fillHeaderMoneyAccountReceivedArguments = (header: header, moneyAccount: moneyAccount)
-        fillHeaderMoneyAccountReceivedInvocations.append((header: header, moneyAccount: moneyAccount))
-        fillHeaderMoneyAccountClosure?(header, moneyAccount)
+    func fill(header: DashboardHeaderRepresentable, section: Int) {
+        fillHeaderSectionCallsCount += 1
+        fillHeaderSectionReceivedArguments = (header: header, section: section)
+        fillHeaderSectionReceivedInvocations.append((header: header, section: section))
+        fillHeaderSectionClosure?(header, section)
+    }
+
+    //MARK: - fill
+
+    var fillCellSectionRowCallsCount = 0
+    var fillCellSectionRowCalled: Bool {
+        return fillCellSectionRowCallsCount > 0
+    }
+    var fillCellSectionRowReceivedArguments: (cell: DashboardCellRepresentable, section: Int, row: Int)?
+    var fillCellSectionRowReceivedInvocations: [(cell: DashboardCellRepresentable, section: Int, row: Int)] = []
+    var fillCellSectionRowClosure: ((DashboardCellRepresentable, Int, Int) -> Void)?
+
+    func fill(cell: DashboardCellRepresentable, section: Int, row: Int) {
+        fillCellSectionRowCallsCount += 1
+        fillCellSectionRowReceivedArguments = (cell: cell, section: section, row: row)
+        fillCellSectionRowReceivedInvocations.append((cell: cell, section: section, row: row))
+        fillCellSectionRowClosure?(cell, section, row)
     }
 
 }
