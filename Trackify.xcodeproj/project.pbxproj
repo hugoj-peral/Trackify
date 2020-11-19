@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394F12566614C00574C13 /* AppDelegate.swift */; };
+		9A0394F62566614C00574C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394F52566614C00574C13 /* ViewController.swift */; };
+		9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */; };
+		9A0394FE2566614D00574C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0394FD2566614D00574C13 /* Assets.xcassets */; };
+		9A0395012566614D00574C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0394FF2566614D00574C13 /* LaunchScreen.storyboard */; };
+		9A03950C2566614D00574C13 /* TrackifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A03950B2566614D00574C13 /* TrackifyTests.swift */; };
+		9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A03953B2566641500574C13 /* CoreDataStack.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A0395082566614D00574C13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A0394E62566614C00574C13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0394ED2566614C00574C13;
+			remoteInfo = Trackify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A0394EE2566614C00574C13 /* Trackify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0394F12566614C00574C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A0394F52566614C00574C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A0394FB2566614C00574C13 /* Trackify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trackify.xcdatamodel; sourceTree = "<group>"; };
+		9A0394FD2566614D00574C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A0395002566614D00574C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A0395022566614D00574C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0395072566614D00574C13 /* TrackifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A03950B2566614D00574C13 /* TrackifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackifyTests.swift; sourceTree = "<group>"; };
+		9A03950D2566614D00574C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A03953B2566641500574C13 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A0394EB2566614C00574C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0395042566614D00574C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A0394E52566614C00574C13 = {
+			isa = PBXGroup;
+			children = (
+				9A0394F02566614C00574C13 /* Trackify */,
+				9A03950A2566614D00574C13 /* TrackifyTests */,
+				9A0394EF2566614C00574C13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A0394EF2566614C00574C13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A0394EE2566614C00574C13 /* Trackify.app */,
+				9A0395072566614D00574C13 /* TrackifyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A0394F02566614C00574C13 /* Trackify */ = {
+			isa = PBXGroup;
+			children = (
+				9A039538256663A900574C13 /* CoreData */,
+				9A0394F12566614C00574C13 /* AppDelegate.swift */,
+				9A0394F52566614C00574C13 /* ViewController.swift */,
+				9A0394FD2566614D00574C13 /* Assets.xcassets */,
+				9A0394FF2566614D00574C13 /* LaunchScreen.storyboard */,
+				9A0395022566614D00574C13 /* Info.plist */,
+			);
+			path = Trackify;
+			sourceTree = "<group>";
+		};
+		9A03950A2566614D00574C13 /* TrackifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A03950B2566614D00574C13 /* TrackifyTests.swift */,
+				9A03950D2566614D00574C13 /* Info.plist */,
+			);
+			path = TrackifyTests;
+			sourceTree = "<group>";
+		};
+		9A039538256663A900574C13 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */,
+				9A03953B2566641500574C13 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A0394ED2566614C00574C13 /* Trackify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A03951B2566614D00574C13 /* Build configuration list for PBXNativeTarget "Trackify" */;
+			buildPhases = (
+				9A0394EA2566614C00574C13 /* Sources */,
+				9A0394EB2566614C00574C13 /* Frameworks */,
+				9A0394EC2566614C00574C13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trackify;
+			productName = Trackify;
+			productReference = 9A0394EE2566614C00574C13 /* Trackify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A0395062566614D00574C13 /* TrackifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A03951E2566614D00574C13 /* Build configuration list for PBXNativeTarget "TrackifyTests" */;
+			buildPhases = (
+				9A0395032566614D00574C13 /* Sources */,
+				9A0395042566614D00574C13 /* Frameworks */,
+				9A0395052566614D00574C13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A0395092566614D00574C13 /* PBXTargetDependency */,
+			);
+			name = TrackifyTests;
+			productName = TrackifyTests;
+			productReference = 9A0395072566614D00574C13 /* TrackifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A0394E62566614C00574C13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					9A0394ED2566614C00574C13 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					9A0395062566614D00574C13 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 9A0394ED2566614C00574C13;
+					};
+				};
+			};
+			buildConfigurationList = 9A0394E92566614C00574C13 /* Build configuration list for PBXProject "Trackify" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A0394E52566614C00574C13;
+			productRefGroup = 9A0394EF2566614C00574C13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A0394ED2566614C00574C13 /* Trackify */,
+				9A0395062566614D00574C13 /* TrackifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A0394EC2566614C00574C13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0395012566614D00574C13 /* LaunchScreen.storyboard in Resources */,
+				9A0394FE2566614D00574C13 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0395052566614D00574C13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A0394EA2566614C00574C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0394F62566614C00574C13 /* ViewController.swift in Sources */,
+				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
+				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
+				9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0395032566614D00574C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A03950C2566614D00574C13 /* TrackifyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A0395092566614D00574C13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0394ED2566614C00574C13 /* Trackify */;
+			targetProxy = 9A0395082566614D00574C13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A0394FF2566614D00574C13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A0395002566614D00574C13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A0395192566614D00574C13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A03951A2566614D00574C13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A03951C2566614D00574C13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Trackify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.Trackify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9A03951D2566614D00574C13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Trackify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.Trackify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9A03951F2566614D00574C13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TrackifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.TrackifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackify.app/Trackify";
+			};
+			name = Debug;
+		};
+		9A0395202566614D00574C13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TrackifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugo.TrackifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackify.app/Trackify";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A0394E92566614C00574C13 /* Build configuration list for PBXProject "Trackify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0395192566614D00574C13 /* Debug */,
+				9A03951A2566614D00574C13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A03951B2566614D00574C13 /* Build configuration list for PBXNativeTarget "Trackify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A03951C2566614D00574C13 /* Debug */,
+				9A03951D2566614D00574C13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A03951E2566614D00574C13 /* Build configuration list for PBXNativeTarget "TrackifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A03951F2566614D00574C13 /* Debug */,
+				9A0395202566614D00574C13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A0394FB2566614C00574C13 /* Trackify.xcdatamodel */,
+			);
+			currentVersion = 9A0394FB2566614C00574C13 /* Trackify.xcdatamodel */;
+			path = Trackify.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9A0394E62566614C00574C13 /* Project object */;
+}
