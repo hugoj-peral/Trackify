@@ -40,6 +40,6 @@ extension DashboardAssembler {
     }
     
     func resolve() -> DashboardDatamanager{
-        return DashboardDatamanager()
+        return DashboardDatamanager(coreDataStack: CoreDataStack.shared)
     }
 }

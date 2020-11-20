@@ -7,19 +7,8 @@
 
 import Foundation
 
-enum CategoryType {
+enum CategoryType: String {
     case income, expense
-}
-
-extension CategoryType: CustomStringConvertible {
-    var description: String {
-        switch self {
-        case .income:
-            return "income"
-        case .expense:
-            return "expense"
-        }
-    }
 }
 
 struct Category {

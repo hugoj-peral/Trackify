@@ -39,38 +39,30 @@ class PopulateDataManager {
     
     @discardableResult
     private func insertCategories(categories: [Category]) -> [CategoryMO] {
+        let mapper = CategoryMapper()
         return categories.map ({
             let categoryMO = NSEntityDescription.insertNewObject(forEntityName: "CategoryMO", into: coreDataStack.persistentContainer.viewContext) as! CategoryMO
-            categoryMO.id = $0.id
-            categoryMO.name = $0.name
-            categoryMO.type = $0.type.description
+            mapper.map(categoryMO, with: $0)
             return categoryMO
         })
     }
     
     @discardableResult
     private func insertAccounts(accounts: [Account]) -> [AccountMO] {
+        let mapper = AccountMapper()
         return accounts.map ({
             let accountMO = NSEntityDescription.insertNewObject(forEntityName: "AccountMO", into: coreDataStack.persistentContainer.viewContext) as! AccountMO
-            accountMO.id = $0.id
-            accountMO.name = $0.name
+            mapper.map(accountMO, with: $0)
             return accountMO
         })
     }
     
     @discardableResult
     private  func insertTransactions(transactions: [Transaction], accounts: [AccountMO], categories: [CategoryMO]) -> [TransactionMO] {
+        let mapper = TransactionMapper()
         return transactions.map ({
             let transactionMO = NSEntityDescription.insertNewObject(forEntityName: "TransactionMO", into: coreDataStack.persistentContainer.viewContext) as! TransactionMO
-            transactionMO.id = $0.id
-            transactionMO.date = $0.date
-            transactionMO.amount = $0.amount
-            let categoryId = $0.category.id
-            let categoryMO = categories.filter { (category) -> Bool in
-                category.id == categoryId
-            }.first
-            transactionMO.category = categoryMO
-            transactionMO.account = accounts.randomElement()
+            mapper.map(transactionMO, with: $0, account: accounts.randomElement()!, categories: categories)
             return transactionMO
         })
     }

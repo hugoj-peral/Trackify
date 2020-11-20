@@ -13,12 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        PopulateDataManager(coreDataStack: CoreDataStack.shared).populateAppIfNeeded()
         
-        let assembler = AppAssembler()
-        
-        PopulateDataManager(coreDataStack: assembler.resolve()).populateAppIfNeeded()
-        
-        let dashboardController: DashboardViewController = assembler.resolve()
+        let dashboardController: DashboardViewController = AppAssembler().resolve()
         let navigationController = UINavigationController(rootViewController: dashboardController)
         window = window ?? UIWindow.makeWindow(frame: UIScreen.main.bounds, rootViewController: navigationController)
         window?.makeKeyAndVisible()

@@ -7,4 +7,4 @@
 
 import Foundation
 
-final class AppAssembler: CoreDataAssembler, DashboardAssembler {}
+final class AppAssembler: DashboardAssembler {}
