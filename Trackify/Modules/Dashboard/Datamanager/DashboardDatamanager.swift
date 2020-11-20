@@ -12,7 +12,7 @@ class DashboardDatamanager {
 }
 
 extension DashboardDatamanager: DashboardDatamanagerProtocol {
-    func fetchDashboard(completion: @escaping (Dashboard) -> Void) {
-        completion(generator.makeRandomDashboard())
+    func fetchAccounts(completion: @escaping ([Account]) -> Void) {
+        completion(generator.makeRandomDashboard().accounts)
     }
 }

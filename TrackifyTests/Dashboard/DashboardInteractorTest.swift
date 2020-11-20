@@ -27,15 +27,23 @@ class DashboardInteractorTest: XCTestCase {
         sut = nil
     }
     
-    func testPorcessDashboard_Loaded() {
-        sut.processDashboard(dashboard: DashboardRandomGenerator().makeRandomDashboard())
+    func testPorcessAccounts_Loaded() {
+        sut.processAccounts(accounts: DashboardRandomGenerator().makeRandomDashboard().accounts)
         
         XCTAssert(presenter.loadedDashboardCalled)
+    }
+    
+    func testPorcessAccounts_LessOrEqualToTenTransactions() {
+        sut.processAccounts(accounts: DashboardRandomGenerator().makeRandomDashboard().accounts)
+        
+        XCTAssert(presenter.loadedDashboardCalled)
+        guard let dashboard = presenter.loadedDashboardReceivedDashboard else { return }
+        XCTAssert(dashboard.accounts.map({$0.transactions}).allSatisfy({$0.count <= 10}))
     }
     
     func testLoadDashboard_FetchDashboard() {
         sut.loadDashboard()
         
-        XCTAssert(datamanager.fetchDashboardCompletionCalled)
+        XCTAssert(datamanager.fetchAccountsCompletionCalled)
     }
 }

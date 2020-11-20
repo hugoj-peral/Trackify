@@ -9,5 +9,5 @@ import Foundation
 
 // sourcery: AutoMockable
 protocol DashboardDatamanagerProtocol: AnyObject {
-    func fetchDashboard(completion: @escaping (Dashboard) -> Void)
+    func fetchAccounts(completion: @escaping ([Account]) -> Void)
 }

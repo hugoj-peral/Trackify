@@ -48,21 +48,21 @@ class DashboardCellRepresentableMock: DashboardCellRepresentable {
 }
 class DashboardDatamanagerProtocolMock: DashboardDatamanagerProtocol {
 
-    //MARK: - fetchDashboard
+    //MARK: - fetchAccounts
 
-    var fetchDashboardCompletionCallsCount = 0
-    var fetchDashboardCompletionCalled: Bool {
-        return fetchDashboardCompletionCallsCount > 0
+    var fetchAccountsCompletionCallsCount = 0
+    var fetchAccountsCompletionCalled: Bool {
+        return fetchAccountsCompletionCallsCount > 0
     }
-    var fetchDashboardCompletionReceivedCompletion: ((Dashboard) -> Void)?
-    var fetchDashboardCompletionReceivedInvocations: [((Dashboard) -> Void)] = []
-    var fetchDashboardCompletionClosure: ((@escaping (Dashboard) -> Void) -> Void)?
+    var fetchAccountsCompletionReceivedCompletion: (([Account]) -> Void)?
+    var fetchAccountsCompletionReceivedInvocations: [(([Account]) -> Void)] = []
+    var fetchAccountsCompletionClosure: ((@escaping ([Account]) -> Void) -> Void)?
 
-    func fetchDashboard(completion: @escaping (Dashboard) -> Void) {
-        fetchDashboardCompletionCallsCount += 1
-        fetchDashboardCompletionReceivedCompletion = completion
-        fetchDashboardCompletionReceivedInvocations.append(completion)
-        fetchDashboardCompletionClosure?(completion)
+    func fetchAccounts(completion: @escaping ([Account]) -> Void) {
+        fetchAccountsCompletionCallsCount += 1
+        fetchAccountsCompletionReceivedCompletion = completion
+        fetchAccountsCompletionReceivedInvocations.append(completion)
+        fetchAccountsCompletionClosure?(completion)
     }
 
 }
