@@ -13,10 +13,12 @@ class DashboardPresenterTest: XCTestCase {
     var sut: DashboardPresenter!
     var view: DashboardViewProtocolMock!
     var router: DashboardRouterProtocolMock!
+    var interactor: DashboardInteractorInputProtocolMock!
 
     override func setUpWithError() throws {
         router = DashboardRouterProtocolMock()
-        sut = DashboardPresenter(router: router)
+        interactor = DashboardInteractorInputProtocolMock()
+        sut = DashboardPresenter(router: router, interactor: interactor)
         view = DashboardViewProtocolMock()
         sut.view = view
     }
@@ -24,6 +26,7 @@ class DashboardPresenterTest: XCTestCase {
     override func tearDownWithError() throws {
         view = nil
         router = nil
+        interactor = nil
         sut = nil
     }
 
@@ -38,7 +41,7 @@ class DashboardPresenterTest: XCTestCase {
     func testViewDidLoad_Refresh() {
         sut.viewDidLoad()
         
-        XCTAssert(view.refreshCalled)
+        XCTAssert(interactor.loadDashboardCalled)
     }
     
     func testNumberOfMoneyAccounts() {
@@ -69,5 +72,11 @@ class DashboardPresenterTest: XCTestCase {
         sut.addTransactionAction()
         
         XCTAssert(router.routeToAddTransactionCalled)
+    }
+    
+    func testLoaded_Refresh() {
+        sut.loaded()
+        
+        XCTAssert(view.refreshCalled)
     }
 }

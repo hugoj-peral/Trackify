@@ -34,6 +34,9 @@
 		9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */; };
 		9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */; };
 		9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */; };
+		9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */; };
+		9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD972567B20B002DCDE4 /* DashboardInteractorProtocol.swift */; };
+		9AC6CD9E2567B74F002DCDE4 /* DashboardInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD9D2567B74F002DCDE4 /* DashboardInteractorTest.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigableView.swift"; sourceTree = "<group>"; };
 		9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouterProtocol.swift; sourceTree = "<group>"; };
 		9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		9AC6CD972567B20B002DCDE4 /* DashboardInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorProtocol.swift; sourceTree = "<group>"; };
+		9AC6CD9D2567B74F002DCDE4 /* DashboardInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorTest.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +186,7 @@
 				9AC6CD852566DBE8002DCDE4 /* Router */,
 				9A9FE4B725666D7300861719 /* View */,
 				9A9FE4B825666D7D00861719 /* Presenter */,
+				9AC6CD902567B1DE002DCDE4 /* Interactor */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -207,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				9AC6CD6B256698A2002DCDE4 /* ReusableViews */,
-				9A9FE4A3256668AE00861719 /* DashboardViewController.swift */,
 				9A9FE4BD25666E7C00861719 /* DashboardViewProtocol.swift */,
+				9A9FE4A3256668AE00861719 /* DashboardViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 			children = (
 				9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */,
 				9AC6CD5B25668D3A002DCDE4 /* DashboardViewControllerTest.swift */,
+				9AC6CD9D2567B74F002DCDE4 /* DashboardInteractorTest.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -287,6 +295,15 @@
 				9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		9AC6CD902567B1DE002DCDE4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CD972567B20B002DCDE4 /* DashboardInteractorProtocol.swift */,
+				9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -469,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */,
 				9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */,
 				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
 				9AC6CD7C2566CC96002DCDE4 /* UILabel+Font.swift in Sources */,
@@ -483,6 +501,7 @@
 				9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */,
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,
+				9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */,
 				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,
 				9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */,
 				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
@@ -495,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC6CD3D2566895B002DCDE4 /* AutoMockable.generated.swift in Sources */,
+				9AC6CD9E2567B74F002DCDE4 /* DashboardInteractorTest.swift in Sources */,
 				9AC6CD5C25668D3A002DCDE4 /* DashboardViewControllerTest.swift in Sources */,
 				9AC6CD5625668B51002DCDE4 /* DashboardPresenterTest.swift in Sources */,
 				9AC6CD6125668FAA002DCDE4 /* TableViewMock.swift in Sources */,

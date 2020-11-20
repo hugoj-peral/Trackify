@@ -11,16 +11,18 @@ final class DashboardPresenter {
     weak var view: DashboardViewProtocol?
     var accountsNames: [String] = ["Cash", "Credit Card", "Bank Account"]
     let router: DashboardRouterProtocol
+    let interactor: DashboardInteractorInputProtocol
     
-    init(router: DashboardRouterProtocol) {
+    init(router: DashboardRouterProtocol, interactor: DashboardInteractorInputProtocol) {
         self.router = router
+        self.interactor = interactor
     }
 }
 
 extension DashboardPresenter: DashboardPresenterProtocol {
     func viewDidLoad() {
         view?.setViewTitle("dashboard_title".localized)
-        view?.refresh()
+        interactor.loadDashboard()
     }
     
     func numberOfMoneyAccounts() -> Int {
@@ -41,5 +43,11 @@ extension DashboardPresenter: DashboardPresenterProtocol {
     
     func addTransactionAction() {
         router.routeToAddTransaction()
+    }
+}
+
+extension DashboardPresenter: DashboardInteractorOutputProtocol {
+    func loaded() {
+        view?.refresh()
     }
 }

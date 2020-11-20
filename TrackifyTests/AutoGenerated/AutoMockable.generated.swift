@@ -66,6 +66,38 @@ class DashboardHeaderRepresentableMock: DashboardHeaderRepresentable {
     }
 
 }
+class DashboardInteractorInputProtocolMock: DashboardInteractorInputProtocol {
+
+    //MARK: - loadDashboard
+
+    var loadDashboardCallsCount = 0
+    var loadDashboardCalled: Bool {
+        return loadDashboardCallsCount > 0
+    }
+    var loadDashboardClosure: (() -> Void)?
+
+    func loadDashboard() {
+        loadDashboardCallsCount += 1
+        loadDashboardClosure?()
+    }
+
+}
+class DashboardInteractorOutputProtocolMock: DashboardInteractorOutputProtocol {
+
+    //MARK: - loaded
+
+    var loadedCallsCount = 0
+    var loadedCalled: Bool {
+        return loadedCallsCount > 0
+    }
+    var loadedClosure: (() -> Void)?
+
+    func loaded() {
+        loadedCallsCount += 1
+        loadedClosure?()
+    }
+
+}
 class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
 
     //MARK: - viewDidLoad
