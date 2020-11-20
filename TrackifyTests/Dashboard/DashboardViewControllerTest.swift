@@ -50,12 +50,12 @@ class DashboardViewControllerTest: XCTestCase {
     
     func testNumberOfRowsInSection_NumberOfTransactionsPerMoneyAccount() {
         let numberOfRows = 26
-        presenter.numberOfTransactionsPerMoneyAccountReturnValue = numberOfRows
+        presenter.numberOfTransactionsPerMoneyAccountSectionReturnValue = numberOfRows
         
         let result = sut.tableView(TableViewMock(), numberOfRowsInSection: 0)
         
         XCTAssert(result == numberOfRows)
-        XCTAssert(presenter.numberOfTransactionsPerMoneyAccountCalled)
+        XCTAssert(presenter.numberOfTransactionsPerMoneyAccountSectionCalled)
     }
     
     func testViewDidLoad_ViewDidLoad() {

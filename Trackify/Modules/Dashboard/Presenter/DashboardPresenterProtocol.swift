@@ -11,7 +11,7 @@ import Foundation
 protocol DashboardPresenterProtocol: AnyObject {
     func viewDidLoad()
     func numberOfMoneyAccounts() -> Int
-    func numberOfTransactionsPerMoneyAccount() -> Int
+    func numberOfTransactionsPerMoneyAccount(section: Int) -> Int
     func fill(header: DashboardHeaderRepresentable, section: Int)
     func fill(cell: DashboardCellRepresentable, section: Int, row: Int)
     func addTransactionAction()

@@ -9,7 +9,7 @@ import UIKit
 
 // sourcery: AutoMockable
 protocol DashboardCellRepresentable {
-    func display(category: String, date: String, amount: String, positive: Bool)
+    func display(category: String, date: String, amount: String, type: CategoryType)
 }
 
 final class DashboardCell: UITableViewCell {
@@ -46,11 +46,15 @@ final class DashboardCell: UITableViewCell {
 }
 
 extension DashboardCell: DashboardCellRepresentable {
-    func display(category: String, date: String, amount: String, positive: Bool) {
+    func display(category: String, date: String, amount: String, type: CategoryType) {
         self.category.text = category
         self.date.text = date
         self.amount.text = amount
         
-        self.amount.textColor = positive ? .green : .red
+        if case .expense = type {
+            self.amount.textColor = .red
+        } else {
+            self.amount.textColor = .green
+        }
     }
 }

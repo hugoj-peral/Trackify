@@ -9,9 +9,11 @@ import Foundation
 
 final class DashboardPresenter {
     weak var view: DashboardViewProtocol?
-    var accountsNames: [String] = ["Cash", "Credit Card", "Bank Account"]
+    var dashboard: Dashboard = Dashboard(accounts: [])
     let router: DashboardRouterProtocol
     let interactor: DashboardInteractorInputProtocol
+    let dateFormatter = DateFormatter.makeDateFormatter()
+    let numberFormatter = NumberFormatter.makeNumberFormatter()
     
     init(router: DashboardRouterProtocol, interactor: DashboardInteractorInputProtocol) {
         self.router = router
@@ -26,19 +28,22 @@ extension DashboardPresenter: DashboardPresenterProtocol {
     }
     
     func numberOfMoneyAccounts() -> Int {
-        return accountsNames.count
+        return dashboard.accounts.count
     }
     
-    func numberOfTransactionsPerMoneyAccount() -> Int {
-        return 10
+    func numberOfTransactionsPerMoneyAccount(section: Int) -> Int {
+        return dashboard.accounts[section].transactions.count
     }
     
     func fill(header: DashboardHeaderRepresentable, section: Int) {
-        header.display(account: accountsNames[section], balance: "300€")
+        let account = dashboard.accounts[section]
+        header.display(account: account.name, balance: numberFormatter.string(for: account.balance)!)
     }
     
     func fill(cell: DashboardCellRepresentable, section: Int, row: Int) {
-        cell.display(category: "Home", date: "20/09/2020 at 5:30pm", amount: "-300€", positive: false)
+        let transaction = dashboard.accounts[section].transactions[row]
+        let category = transaction.category
+        cell.display(category: category.name, date: dateFormatter.string(from: transaction.date), amount: numberFormatter.string(for: transaction.amount)!, type: category.type)
     }
     
     func addTransactionAction() {
@@ -47,7 +52,8 @@ extension DashboardPresenter: DashboardPresenterProtocol {
 }
 
 extension DashboardPresenter: DashboardInteractorOutputProtocol {
-    func loaded() {
+    func loaded(dashboard: Dashboard) {
+        self.dashboard = dashboard
         view?.refresh()
     }
 }

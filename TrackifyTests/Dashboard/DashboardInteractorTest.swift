@@ -27,6 +27,6 @@ class DashboardInteractorTest: XCTestCase {
     func testLoadDashboard_Loaded() {
         sut.loadDashboard()
         
-        XCTAssert(presenter.loadedCalled)
+        XCTAssert(presenter.loadedDashboardCalled)
     }
 }

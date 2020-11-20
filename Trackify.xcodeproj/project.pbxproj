@@ -30,13 +30,19 @@
 		9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD6C25669905002DCDE4 /* DashboardHeader.swift */; };
 		9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7125669FD4002DCDE4 /* Account.swift */; };
 		9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD752566A5C9002DCDE4 /* DashboardCell.swift */; };
-		9AC6CD7C2566CC96002DCDE4 /* UILabel+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */; };
+		9AC6CD7C2566CC96002DCDE4 /* UILabel+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7B2566CC96002DCDE4 /* UILabel+Custom.swift */; };
 		9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */; };
 		9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */; };
 		9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */; };
 		9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */; };
 		9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD972567B20B002DCDE4 /* DashboardInteractorProtocol.swift */; };
 		9AC6CD9E2567B74F002DCDE4 /* DashboardInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD9D2567B74F002DCDE4 /* DashboardInteractorTest.swift */; };
+		9AC6CDA82567BB1D002DCDE4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDA72567BB1D002DCDE4 /* Category.swift */; };
+		9AC6CDAC2567BBA1002DCDE4 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDAB2567BBA1002DCDE4 /* Dashboard.swift */; };
+		9AC6CDB02567BBF7002DCDE4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDAF2567BBF7002DCDE4 /* Transaction.swift */; };
+		9AC6CDD12567E9D3002DCDE4 /* NumberFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */; };
+		9AC6CDD52567E9ED002DCDE4 /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */; };
+		9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,13 +88,19 @@
 		9AC6CD6C25669905002DCDE4 /* DashboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeader.swift; sourceTree = "<group>"; };
 		9AC6CD7125669FD4002DCDE4 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9AC6CD752566A5C9002DCDE4 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
-		9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Font.swift"; sourceTree = "<group>"; };
+		9AC6CD7B2566CC96002DCDE4 /* UILabel+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Custom.swift"; sourceTree = "<group>"; };
 		9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigableView.swift"; sourceTree = "<group>"; };
 		9AC6CD862566DC06002DCDE4 /* DashboardRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouterProtocol.swift; sourceTree = "<group>"; };
 		9AC6CD8A2566DC18002DCDE4 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9AC6CD972567B20B002DCDE4 /* DashboardInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorProtocol.swift; sourceTree = "<group>"; };
 		9AC6CD9D2567B74F002DCDE4 /* DashboardInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractorTest.swift; sourceTree = "<group>"; };
+		9AC6CDA72567BB1D002DCDE4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9AC6CDAB2567BBA1002DCDE4 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		9AC6CDAF2567BBF7002DCDE4 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Custom.swift"; sourceTree = "<group>"; };
+		9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
+		9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRandomGenerator.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,9 +156,9 @@
 		9A0394F02566614C00574C13 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
-				9AC6CD7025669FBB002DCDE4 /* Model */,
 				9A9FE4A9256669E500861719 /* Extensions */,
-				9A9FE4A22566687A00861719 /* Dashboard */,
+				9AC6CD7025669FBB002DCDE4 /* Model */,
+				9AC6CDB62567C877002DCDE4 /* Modules */,
 				9A039538256663A900574C13 /* CoreData */,
 				9A0394F12566614C00574C13 /* AppDelegate.swift */,
 				9A9FE4B325666BA300861719 /* AppAssembler.swift */,
@@ -196,8 +208,10 @@
 			children = (
 				9A9FE4AA25666A0900861719 /* UIWindow+Factory.swift */,
 				9A9FE4D72566817000861719 /* String+Localized.swift */,
-				9AC6CD7B2566CC96002DCDE4 /* UILabel+Font.swift */,
+				9AC6CD7B2566CC96002DCDE4 /* UILabel+Custom.swift */,
 				9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */,
+				9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */,
+				9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +298,10 @@
 			isa = PBXGroup;
 			children = (
 				9AC6CD7125669FD4002DCDE4 /* Account.swift */,
+				9AC6CDA72567BB1D002DCDE4 /* Category.swift */,
+				9AC6CDAB2567BBA1002DCDE4 /* Dashboard.swift */,
+				9AC6CDAF2567BBF7002DCDE4 /* Transaction.swift */,
+				9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +322,14 @@
 				9AC6CD912567B1FC002DCDE4 /* DashboardInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9AC6CDB62567C877002DCDE4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FE4A22566687A00861719 /* Dashboard */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -486,13 +512,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6CDA82567BB1D002DCDE4 /* Category.swift in Sources */,
 				9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */,
+				9AC6CDB02567BBF7002DCDE4 /* Transaction.swift in Sources */,
 				9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */,
 				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
-				9AC6CD7C2566CC96002DCDE4 /* UILabel+Font.swift in Sources */,
+				9AC6CD7C2566CC96002DCDE4 /* UILabel+Custom.swift in Sources */,
 				9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */,
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
 				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
+				9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */,
 				9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */,
 				9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */,
 				9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */,
@@ -502,10 +531,13 @@
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,
 				9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */,
+				9AC6CDD12567E9D3002DCDE4 /* NumberFormatter+Custom.swift in Sources */,
+				9AC6CDD52567E9ED002DCDE4 /* DateFormatter+Custom.swift in Sources */,
 				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,
 				9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */,
 				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
 				9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */,
+				9AC6CDAC2567BBA1002DCDE4 /* Dashboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

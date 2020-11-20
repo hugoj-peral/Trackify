@@ -14,5 +14,5 @@ protocol DashboardInteractorInputProtocol: AnyObject {
 
 // sourcery: AutoMockable
 protocol DashboardInteractorOutputProtocol: AnyObject {
-    func loaded()
+    func loaded(dashboard: Dashboard)
 }

@@ -13,6 +13,6 @@ class DashboardInteractor {
 
 extension DashboardInteractor: DashboardInteractorInputProtocol {
     func loadDashboard() {
-        presenter?.loaded()
+        presenter?.loaded(dashboard: DashboardRandomGenerator().makeRandomDashboard())
     }
 }

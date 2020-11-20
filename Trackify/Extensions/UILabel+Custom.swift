@@ -1,5 +1,5 @@
 //
-//  UILabel+Font.swift
+//  UILabel+Custom.swift
 //  Trackify
 //
 //  Created by Hugo Peral on 19/11/2020.

@@ -21,6 +21,7 @@ class DashboardPresenterTest: XCTestCase {
         sut = DashboardPresenter(router: router, interactor: interactor)
         view = DashboardViewProtocolMock()
         sut.view = view
+        sut.dashboard = Dashboard(accounts: [Account(id: 1, name: "Cash", transactions: [Transaction(id: 1, category: Category(id: 1, name: "Salary", type: .income), date: Date(), amount: 100.0)], balance: 100.0)])
     }
 
     override func tearDownWithError() throws {
@@ -45,11 +46,11 @@ class DashboardPresenterTest: XCTestCase {
     }
     
     func testNumberOfMoneyAccounts() {
-        XCTAssert(sut.numberOfMoneyAccounts() == 3)
+        XCTAssert(sut.numberOfMoneyAccounts() == 1)
     }
     
     func testNumberOfTransactionsPerMoneyAccount() {
-        XCTAssert(sut.numberOfTransactionsPerMoneyAccount() == 10)
+        XCTAssert(sut.numberOfTransactionsPerMoneyAccount(section: 0) == 1)
     }
     
     func testFillHeader() {
@@ -65,7 +66,7 @@ class DashboardPresenterTest: XCTestCase {
         
         sut.fill(cell: cell, section: 0, row: 0)
         
-        XCTAssert(cell.displayCategoryDateAmountPositiveCalled)
+        XCTAssert(cell.displayCategoryDateAmountTypeCalled)
     }
     
     func testAddTransactionAction_RouteToAddTransaction() {
@@ -75,7 +76,7 @@ class DashboardPresenterTest: XCTestCase {
     }
     
     func testLoaded_Refresh() {
-        sut.loaded()
+        sut.loaded(dashboard: Dashboard(accounts: []))
         
         XCTAssert(view.refreshCalled)
     }

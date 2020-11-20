@@ -30,19 +30,19 @@ class DashboardCellRepresentableMock: DashboardCellRepresentable {
 
     //MARK: - display
 
-    var displayCategoryDateAmountPositiveCallsCount = 0
-    var displayCategoryDateAmountPositiveCalled: Bool {
-        return displayCategoryDateAmountPositiveCallsCount > 0
+    var displayCategoryDateAmountTypeCallsCount = 0
+    var displayCategoryDateAmountTypeCalled: Bool {
+        return displayCategoryDateAmountTypeCallsCount > 0
     }
-    var displayCategoryDateAmountPositiveReceivedArguments: (category: String, date: String, amount: String, positive: Bool)?
-    var displayCategoryDateAmountPositiveReceivedInvocations: [(category: String, date: String, amount: String, positive: Bool)] = []
-    var displayCategoryDateAmountPositiveClosure: ((String, String, String, Bool) -> Void)?
+    var displayCategoryDateAmountTypeReceivedArguments: (category: String, date: String, amount: String, type: CategoryType)?
+    var displayCategoryDateAmountTypeReceivedInvocations: [(category: String, date: String, amount: String, type: CategoryType)] = []
+    var displayCategoryDateAmountTypeClosure: ((String, String, String, CategoryType) -> Void)?
 
-    func display(category: String, date: String, amount: String, positive: Bool) {
-        displayCategoryDateAmountPositiveCallsCount += 1
-        displayCategoryDateAmountPositiveReceivedArguments = (category: category, date: date, amount: amount, positive: positive)
-        displayCategoryDateAmountPositiveReceivedInvocations.append((category: category, date: date, amount: amount, positive: positive))
-        displayCategoryDateAmountPositiveClosure?(category, date, amount, positive)
+    func display(category: String, date: String, amount: String, type: CategoryType) {
+        displayCategoryDateAmountTypeCallsCount += 1
+        displayCategoryDateAmountTypeReceivedArguments = (category: category, date: date, amount: amount, type: type)
+        displayCategoryDateAmountTypeReceivedInvocations.append((category: category, date: date, amount: amount, type: type))
+        displayCategoryDateAmountTypeClosure?(category, date, amount, type)
     }
 
 }
@@ -86,15 +86,19 @@ class DashboardInteractorOutputProtocolMock: DashboardInteractorOutputProtocol {
 
     //MARK: - loaded
 
-    var loadedCallsCount = 0
-    var loadedCalled: Bool {
-        return loadedCallsCount > 0
+    var loadedDashboardCallsCount = 0
+    var loadedDashboardCalled: Bool {
+        return loadedDashboardCallsCount > 0
     }
-    var loadedClosure: (() -> Void)?
+    var loadedDashboardReceivedDashboard: Dashboard?
+    var loadedDashboardReceivedInvocations: [Dashboard] = []
+    var loadedDashboardClosure: ((Dashboard) -> Void)?
 
-    func loaded() {
-        loadedCallsCount += 1
-        loadedClosure?()
+    func loaded(dashboard: Dashboard) {
+        loadedDashboardCallsCount += 1
+        loadedDashboardReceivedDashboard = dashboard
+        loadedDashboardReceivedInvocations.append(dashboard)
+        loadedDashboardClosure?(dashboard)
     }
 
 }
@@ -129,16 +133,20 @@ class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
 
     //MARK: - numberOfTransactionsPerMoneyAccount
 
-    var numberOfTransactionsPerMoneyAccountCallsCount = 0
-    var numberOfTransactionsPerMoneyAccountCalled: Bool {
-        return numberOfTransactionsPerMoneyAccountCallsCount > 0
+    var numberOfTransactionsPerMoneyAccountSectionCallsCount = 0
+    var numberOfTransactionsPerMoneyAccountSectionCalled: Bool {
+        return numberOfTransactionsPerMoneyAccountSectionCallsCount > 0
     }
-    var numberOfTransactionsPerMoneyAccountReturnValue: Int!
-    var numberOfTransactionsPerMoneyAccountClosure: (() -> Int)?
+    var numberOfTransactionsPerMoneyAccountSectionReceivedSection: Int?
+    var numberOfTransactionsPerMoneyAccountSectionReceivedInvocations: [Int] = []
+    var numberOfTransactionsPerMoneyAccountSectionReturnValue: Int!
+    var numberOfTransactionsPerMoneyAccountSectionClosure: ((Int) -> Int)?
 
-    func numberOfTransactionsPerMoneyAccount() -> Int {
-        numberOfTransactionsPerMoneyAccountCallsCount += 1
-        return numberOfTransactionsPerMoneyAccountClosure.map({ $0() }) ?? numberOfTransactionsPerMoneyAccountReturnValue
+    func numberOfTransactionsPerMoneyAccount(section: Int) -> Int {
+        numberOfTransactionsPerMoneyAccountSectionCallsCount += 1
+        numberOfTransactionsPerMoneyAccountSectionReceivedSection = section
+        numberOfTransactionsPerMoneyAccountSectionReceivedInvocations.append(section)
+        return numberOfTransactionsPerMoneyAccountSectionClosure.map({ $0(section) }) ?? numberOfTransactionsPerMoneyAccountSectionReturnValue
     }
 
     //MARK: - fill

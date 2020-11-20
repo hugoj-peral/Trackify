@@ -49,7 +49,7 @@ final class DashboardViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfTransactionsPerMoneyAccount()
+        return presenter.numberOfTransactionsPerMoneyAccount(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
