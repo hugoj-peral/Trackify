@@ -29,6 +29,7 @@ final class DashboardViewController: UITableViewController {
     
     // MARK: - View setup
     func setupView() {
+        self.view.backgroundColor = .white
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
     

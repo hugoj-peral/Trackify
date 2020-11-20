@@ -13,6 +13,6 @@ class DashboardRouter {
 
 extension DashboardRouter: DashboardRouterProtocol {
     func routeToAddTransaction() {
-        print("Add new transaction")
+        view?.presentEmbebed(view: AddTransactionViewController())
     }
 }

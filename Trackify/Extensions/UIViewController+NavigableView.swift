@@ -8,11 +8,11 @@
 import UIKit
 
 protocol NavigableView: AnyObject {
-    func present(view: NavigableView)
+    func presentEmbebed(view: NavigableView)
 }
 
 extension UIViewController: NavigableView {
-    func present(view: NavigableView) {
-        present(view as! UIViewController, animated: true, completion: nil)
+    func presentEmbebed(view: NavigableView) {
+        present(UINavigationController(rootViewController: view as! UIViewController), animated: true, completion: nil)
     }
 }
