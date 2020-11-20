@@ -8,7 +8,7 @@
 import Foundation
 
 struct Transaction {
-    let id: UInt
+    let id: UUID
     let category: Category
     let date: Date
     let amount: Double

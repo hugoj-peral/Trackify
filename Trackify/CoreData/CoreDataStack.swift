@@ -8,7 +8,18 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+// sourcery: AutoMockable
+protocol CoreDataProvider {
+    var persistentContainer: NSPersistentContainer { get }
+    func saveContext ()
+}
+
+class CoreDataStack: CoreDataProvider {
+    
+    static let shared = CoreDataStack()
+    
+    private init() { }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

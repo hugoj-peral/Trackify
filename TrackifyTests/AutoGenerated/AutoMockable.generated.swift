@@ -10,6 +10,7 @@ import UIKit
 #elseif os(OSX)
 import AppKit
 #endif
+import CoreData
 
 @testable import Trackify
 
@@ -26,6 +27,27 @@ import AppKit
 
 
 
+class CoreDataProviderMock: CoreDataProvider {
+    var persistentContainer: NSPersistentContainer {
+        get { return underlyingPersistentContainer }
+        set(value) { underlyingPersistentContainer = value }
+    }
+    var underlyingPersistentContainer: NSPersistentContainer!
+
+    //MARK: - saveContext 
+
+    var saveContextCallsCount = 0
+    var saveContextCalled: Bool {
+        return saveContextCallsCount > 0
+    }
+    var saveContextClosure: (() -> Void)?
+
+    func saveContext () {
+        saveContextCallsCount += 1
+        saveContextClosure?()
+    }
+
+}
 class DashboardCellRepresentableMock: DashboardCellRepresentable {
 
     //MARK: - display
@@ -43,6 +65,26 @@ class DashboardCellRepresentableMock: DashboardCellRepresentable {
         displayCategoryDateAmountTypeReceivedArguments = (category: category, date: date, amount: amount, type: type)
         displayCategoryDateAmountTypeReceivedInvocations.append((category: category, date: date, amount: amount, type: type))
         displayCategoryDateAmountTypeClosure?(category, date, amount, type)
+    }
+
+}
+class DashboardDatamanagerProtocolMock: DashboardDatamanagerProtocol {
+
+    //MARK: - fetchAccounts
+
+    var fetchAccountsCompletionCallsCount = 0
+    var fetchAccountsCompletionCalled: Bool {
+        return fetchAccountsCompletionCallsCount > 0
+    }
+    var fetchAccountsCompletionReceivedCompletion: (([Account]) -> Void)?
+    var fetchAccountsCompletionReceivedInvocations: [(([Account]) -> Void)] = []
+    var fetchAccountsCompletionClosure: ((@escaping ([Account]) -> Void) -> Void)?
+
+    func fetchAccounts(completion: @escaping ([Account]) -> Void) {
+        fetchAccountsCompletionCallsCount += 1
+        fetchAccountsCompletionReceivedCompletion = completion
+        fetchAccountsCompletionReceivedInvocations.append(completion)
+        fetchAccountsCompletionClosure?(completion)
     }
 
 }
@@ -243,6 +285,36 @@ class DashboardViewProtocolMock: DashboardViewProtocol {
         setViewTitleReceivedTitle = title
         setViewTitleReceivedInvocations.append(title)
         setViewTitleClosure?(title)
+    }
+
+}
+class UserDefaultsAccesableMock: UserDefaultsAccesable {
+
+    //MARK: - isFirstAccess
+
+    var isFirstAccessCallsCount = 0
+    var isFirstAccessCalled: Bool {
+        return isFirstAccessCallsCount > 0
+    }
+    var isFirstAccessReturnValue: Bool!
+    var isFirstAccessClosure: (() -> Bool)?
+
+    func isFirstAccess() -> Bool {
+        isFirstAccessCallsCount += 1
+        return isFirstAccessClosure.map({ $0() }) ?? isFirstAccessReturnValue
+    }
+
+    //MARK: - setFirstAccess
+
+    var setFirstAccessCallsCount = 0
+    var setFirstAccessCalled: Bool {
+        return setFirstAccessCallsCount > 0
+    }
+    var setFirstAccessClosure: (() -> Void)?
+
+    func setFirstAccess() {
+        setFirstAccessCallsCount += 1
+        setFirstAccessClosure?()
     }
 
 }

@@ -43,6 +43,13 @@
 		9AC6CDD12567E9D3002DCDE4 /* NumberFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */; };
 		9AC6CDD52567E9ED002DCDE4 /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */; };
 		9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */; };
+		9AC6CDE22567F368002DCDE4 /* DashboardDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */; };
+		9AC6CDE82567F376002DCDE4 /* DashboardDatamanagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDE72567F376002DCDE4 /* DashboardDatamanagerProtocol.swift */; };
+		9AC6CDEF256814CC002DCDE4 /* PopulateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */; };
+		9AC6CDF725681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */; };
+		9AC6CE1025684123002DCDE4 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CE0F25684123002DCDE4 /* CategoryMapper.swift */; };
+		9AC6CE1425684156002DCDE4 /* AccountMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CE1325684156002DCDE4 /* AccountMapper.swift */; };
+		9AC6CE182568416F002DCDE4 /* TransactionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CE172568416F002DCDE4 /* TransactionMapper.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +108,13 @@
 		9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Custom.swift"; sourceTree = "<group>"; };
 		9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 		9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRandomGenerator.swift; sourceTree = "<group>"; };
+		9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDatamanager.swift; sourceTree = "<group>"; };
+		9AC6CDE72567F376002DCDE4 /* DashboardDatamanagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDatamanagerProtocol.swift; sourceTree = "<group>"; };
+		9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateDataManager.swift; sourceTree = "<group>"; };
+		9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsAccesable.swift"; sourceTree = "<group>"; };
+		9AC6CE0F25684123002DCDE4 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
+		9AC6CE1325684156002DCDE4 /* AccountMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMapper.swift; sourceTree = "<group>"; };
+		9AC6CE172568416F002DCDE4 /* TransactionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionMapper.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +170,7 @@
 		9A0394F02566614C00574C13 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6CDED256814B6002DCDE4 /* Managers */,
 				9A9FE4A9256669E500861719 /* Extensions */,
 				9AC6CD7025669FBB002DCDE4 /* Model */,
 				9AC6CDB62567C877002DCDE4 /* Modules */,
@@ -185,6 +200,7 @@
 		9A039538256663A900574C13 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6CE0E256840FC002DCDE4 /* Mappers */,
 				9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */,
 				9A03953B2566641500574C13 /* CoreDataStack.swift */,
 			);
@@ -199,6 +215,7 @@
 				9A9FE4B725666D7300861719 /* View */,
 				9A9FE4B825666D7D00861719 /* Presenter */,
 				9AC6CD902567B1DE002DCDE4 /* Interactor */,
+				9AC6CDE02567F326002DCDE4 /* Datamanager */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -212,6 +229,7 @@
 				9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */,
 				9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */,
 				9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */,
+				9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +348,33 @@
 				9A9FE4A22566687A00861719 /* Dashboard */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		9AC6CDE02567F326002DCDE4 /* Datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CDE72567F376002DCDE4 /* DashboardDatamanagerProtocol.swift */,
+				9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */,
+			);
+			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		9AC6CDED256814B6002DCDE4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9AC6CE0E256840FC002DCDE4 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CE0F25684123002DCDE4 /* CategoryMapper.swift */,
+				9AC6CE1325684156002DCDE4 /* AccountMapper.swift */,
+				9AC6CE172568416F002DCDE4 /* TransactionMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -512,21 +557,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6CE1425684156002DCDE4 /* AccountMapper.swift in Sources */,
+				9AC6CE182568416F002DCDE4 /* TransactionMapper.swift in Sources */,
 				9AC6CDA82567BB1D002DCDE4 /* Category.swift in Sources */,
 				9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */,
 				9AC6CDB02567BBF7002DCDE4 /* Transaction.swift in Sources */,
 				9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */,
+				9AC6CDE82567F376002DCDE4 /* DashboardDatamanagerProtocol.swift in Sources */,
 				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
+				9AC6CE1025684123002DCDE4 /* CategoryMapper.swift in Sources */,
 				9AC6CD7C2566CC96002DCDE4 /* UILabel+Custom.swift in Sources */,
+				9AC6CDF725681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift in Sources */,
 				9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */,
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
 				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
 				9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */,
 				9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */,
+				9AC6CDEF256814CC002DCDE4 /* PopulateDataManager.swift in Sources */,
 				9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */,
 				9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */,
 				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
 				9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */,
+				9AC6CDE22567F368002DCDE4 /* DashboardDatamanager.swift in Sources */,
 				9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */,
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,

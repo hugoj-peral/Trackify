@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum CategoryType {
+enum CategoryType: String {
     case income, expense
 }
+
 struct Category {
-    let id: UInt
+    let id: UUID
     let name: String
     let type: CategoryType
 }
