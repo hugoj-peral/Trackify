@@ -21,7 +21,7 @@ class DashboardPresenterTest: XCTestCase {
         sut = DashboardPresenter(router: router, interactor: interactor)
         view = DashboardViewProtocolMock()
         sut.view = view
-        sut.dashboard = Dashboard(accounts: [Account(id: 1, name: "Cash", transactions: [Transaction(id: 1, category: Category(id: 1, name: "Salary", type: .income), date: Date(), amount: 100.0)], balance: 100.0)])
+        sut.dashboard = Dashboard(accounts: [Account(id: UUID(), name: "Cash", transactions: [Transaction(id: UUID(), category: Category(id: UUID(), name: "Salary", type: .income), date: Date(), amount: 100.0)], balance: 100.0)])
     }
 
     override func tearDownWithError() throws {

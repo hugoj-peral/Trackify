@@ -10,8 +10,20 @@ import Foundation
 enum CategoryType {
     case income, expense
 }
+
+extension CategoryType: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .income:
+            return "income"
+        case .expense:
+            return "expense"
+        }
+    }
+}
+
 struct Category {
-    let id: UInt
+    let id: UUID
     let name: String
     let type: CategoryType
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Account {
-    let id: UInt
+    let id: UUID
     let name: String
     let transactions: [Transaction]
     let balance: Double

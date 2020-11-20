@@ -45,6 +45,9 @@
 		9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */; };
 		9AC6CDE22567F368002DCDE4 /* DashboardDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */; };
 		9AC6CDE82567F376002DCDE4 /* DashboardDatamanagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDE72567F376002DCDE4 /* DashboardDatamanagerProtocol.swift */; };
+		9AC6CDEF256814CC002DCDE4 /* PopulateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */; };
+		9AC6CDF725681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */; };
+		9AC6CDFB25682004002DCDE4 /* CoreDataAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CDFA25682004002DCDE4 /* CoreDataAssembler.swift */; };
 		F4BD8123E9DCF3203F940F2D /* Pods_TrackifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8104F5D777CA64CFE734E622 /* Pods_TrackifyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		9AC6CDD82567ED18002DCDE4 /* DashboardRandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRandomGenerator.swift; sourceTree = "<group>"; };
 		9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDatamanager.swift; sourceTree = "<group>"; };
 		9AC6CDE72567F376002DCDE4 /* DashboardDatamanagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDatamanagerProtocol.swift; sourceTree = "<group>"; };
+		9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateDataManager.swift; sourceTree = "<group>"; };
+		9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsAccesable.swift"; sourceTree = "<group>"; };
+		9AC6CDFA25682004002DCDE4 /* CoreDataAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAssembler.swift; sourceTree = "<group>"; };
 		EE61DB0C35D13F2BCBF18724 /* Pods-TrackifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackifyTests.release.xcconfig"; path = "Target Support Files/Pods-TrackifyTests/Pods-TrackifyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +166,7 @@
 		9A0394F02566614C00574C13 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6CDED256814B6002DCDE4 /* Managers */,
 				9A9FE4A9256669E500861719 /* Extensions */,
 				9AC6CD7025669FBB002DCDE4 /* Model */,
 				9AC6CDB62567C877002DCDE4 /* Modules */,
@@ -191,6 +198,7 @@
 			children = (
 				9A0394FA2566614C00574C13 /* Trackify.xcdatamodeld */,
 				9A03953B2566641500574C13 /* CoreDataStack.swift */,
+				9AC6CDFA25682004002DCDE4 /* CoreDataAssembler.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				9AC6CD7F2566D66D002DCDE4 /* UIViewController+NavigableView.swift */,
 				9AC6CDD02567E9D3002DCDE4 /* NumberFormatter+Custom.swift */,
 				9AC6CDD42567E9ED002DCDE4 /* DateFormatter+Custom.swift */,
+				9AC6CDF625681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +353,14 @@
 				9AC6CDE12567F368002DCDE4 /* DashboardDatamanager.swift */,
 			);
 			path = Datamanager;
+			sourceTree = "<group>";
+		};
+		9AC6CDED256814B6002DCDE4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6CDEE256814CC002DCDE4 /* PopulateDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		DD2042E9BBC5574812027CC5 /* Pods */ = {
@@ -533,11 +550,13 @@
 				9AC6CDE82567F376002DCDE4 /* DashboardDatamanagerProtocol.swift in Sources */,
 				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
 				9AC6CD7C2566CC96002DCDE4 /* UILabel+Custom.swift in Sources */,
+				9AC6CDF725681C03002DCDE4 /* UserDefaults+UserDefaultsAccesable.swift in Sources */,
 				9A9FE4C825666F1400861719 /* DashboardPresenter.swift in Sources */,
 				9A0394F22566614C00574C13 /* AppDelegate.swift in Sources */,
 				9A9FE4B025666B2200861719 /* DashboardAssembler.swift in Sources */,
 				9AC6CDD92567ED18002DCDE4 /* DashboardRandomGenerator.swift in Sources */,
 				9AC6CD7225669FD4002DCDE4 /* Account.swift in Sources */,
+				9AC6CDEF256814CC002DCDE4 /* PopulateDataManager.swift in Sources */,
 				9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */,
 				9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */,
 				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
@@ -549,6 +568,7 @@
 				9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */,
 				9AC6CDD12567E9D3002DCDE4 /* NumberFormatter+Custom.swift in Sources */,
 				9AC6CDD52567E9ED002DCDE4 /* DateFormatter+Custom.swift in Sources */,
+				9AC6CDFB25682004002DCDE4 /* CoreDataAssembler.swift in Sources */,
 				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,
 				9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */,
 				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
