@@ -12,6 +12,7 @@ protocol DashboardAssembler {
     func resolve(router: DashboardRouter, interactor: DashboardInteractor) -> DashboardPresenter
     func resolve() -> DashboardRouter
     func resolve() -> DashboardInteractor
+    func resolve() -> DashboardDatamanager
 }
 
 extension DashboardAssembler {
@@ -35,6 +36,10 @@ extension DashboardAssembler {
     }
     
     func resolve() -> DashboardInteractor {
-        return DashboardInteractor()
+        return DashboardInteractor(datamanager: resolve())
+    }
+    
+    func resolve() -> DashboardDatamanager{
+        return DashboardDatamanager()
     }
 }

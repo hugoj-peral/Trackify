@@ -46,6 +46,26 @@ class DashboardCellRepresentableMock: DashboardCellRepresentable {
     }
 
 }
+class DashboardDatamanagerProtocolMock: DashboardDatamanagerProtocol {
+
+    //MARK: - fetchDashboard
+
+    var fetchDashboardCompletionCallsCount = 0
+    var fetchDashboardCompletionCalled: Bool {
+        return fetchDashboardCompletionCallsCount > 0
+    }
+    var fetchDashboardCompletionReceivedCompletion: ((Dashboard) -> Void)?
+    var fetchDashboardCompletionReceivedInvocations: [((Dashboard) -> Void)] = []
+    var fetchDashboardCompletionClosure: ((@escaping (Dashboard) -> Void) -> Void)?
+
+    func fetchDashboard(completion: @escaping (Dashboard) -> Void) {
+        fetchDashboardCompletionCallsCount += 1
+        fetchDashboardCompletionReceivedCompletion = completion
+        fetchDashboardCompletionReceivedInvocations.append(completion)
+        fetchDashboardCompletionClosure?(completion)
+    }
+
+}
 class DashboardHeaderRepresentableMock: DashboardHeaderRepresentable {
 
     //MARK: - display
