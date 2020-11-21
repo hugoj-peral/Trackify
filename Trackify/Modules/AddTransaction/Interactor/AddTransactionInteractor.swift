@@ -9,15 +9,25 @@ import Foundation
 
 class AddTransactionInteractor {
     weak var presenter: AddTransactionInteractorOutputProtocol?
+    let datamanager: AddTransactionDatamanagerProtocol
+    
+    init(datamanager: AddTransactionDatamanagerProtocol) {
+        self.datamanager = datamanager
+    }
 }
 
 extension AddTransactionInteractor: AddTransactionInteractorInputProtocol {
 
     func loadSelectionData() {
-        presenter?.selectionDataLoaded(data: (accounts: DashboardRandomGenerator().makeAllAccounts(transactionDistribution: [:]), categories: DashboardRandomGenerator().makeAllCategories()))
+        datamanager.fetchAccountsAndCategories { [weak self](data) in
+            self?.presenter?.selectionDataLoaded(data: data)
+        }
     }
+    
     func saveTransaction(categoryType: CategoryType, account: Account, category: Category, amount: Double) {
         let transaction = Transaction(id: UUID(), category: category, date: Date(), amount: amount)
-        print(transaction)
+        datamanager.store(transaction: transaction, in: account) { [weak self] in
+            self?.presenter?.transactionSaved()
+        }
     }
 }

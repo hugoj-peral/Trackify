@@ -7,6 +7,7 @@
 
 import Foundation
 
+// sourcery: AutoMockable
 protocol AddTransactionViewProtocol: AnyObject {
     func setViewTitle(_ title: String)
     func setTextContent(incomingCategory: (incoming: String, expense: String), account: String, category: String, amount: String)

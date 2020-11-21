@@ -11,13 +11,15 @@ protocol AddTransactionAssembler {
     func resolve(completion: (() -> Void)?) -> AddTransactionViewController
     func resolve(completion: (() -> Void)?) -> AddTransactionRouter
     func resolve(router: AddTransactionRouter, interactor: AddTransactionInteractor) -> AddTransactionPresenter
-    func resolve() -> AddTransactionInteractor
+    func resolve(datamanager: AddTransactionDatamanager) -> AddTransactionInteractor
+    func resolve(coreDataStack: CoreDataProvider) -> AddTransactionDatamanager
 }
 
 extension AddTransactionAssembler {
     func resolve(completion: (() -> Void)?) -> AddTransactionViewController {
         let router: AddTransactionRouter = resolve(completion: completion)
-        let interactor: AddTransactionInteractor = resolve()
+        let datamanager: AddTransactionDatamanager = resolve()
+        let interactor: AddTransactionInteractor = resolve(datamanager: datamanager)
         let presenter: AddTransactionPresenter = resolve(router: router, interactor: interactor)
         let view = AddTransactionViewController(presenter: presenter)
         presenter.view = view
@@ -35,7 +37,11 @@ extension AddTransactionAssembler {
         return AddTransactionPresenter(router: router, interactor: interactor)
     }
     
-    func resolve() -> AddTransactionInteractor {
-        return AddTransactionInteractor()
+    func resolve(datamanager: AddTransactionDatamanager) -> AddTransactionInteractor {
+        return AddTransactionInteractor(datamanager: datamanager)
+    }
+    
+    func resolve(coreDataStack: CoreDataProvider = CoreDataStack.shared) -> AddTransactionDatamanager {
+        return AddTransactionDatamanager(coreDataStack: coreDataStack)
     }
 }

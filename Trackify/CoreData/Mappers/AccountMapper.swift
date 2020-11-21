@@ -13,9 +13,9 @@ class AccountMapper {
         accountMO.name = account.name
     }
     
-    func map(_ accountMO: AccountMO) -> Account {
+    func map(_ accountMO: AccountMO, fullMapping: Bool) -> Account {
         let mapper = TransactionMapper()
-        let transactions = accountMO.transactions!.map({ mapper.map($0 as! TransactionMO) }).sorted { $0.date > $1.date }
+        let transactions = fullMapping ? accountMO.transactions!.map({ mapper.map($0 as! TransactionMO) }).sorted { $0.date > $1.date } : []
         
         return Account(id: accountMO.id!,
                        name: accountMO.name!,

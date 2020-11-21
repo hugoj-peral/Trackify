@@ -7,6 +7,7 @@
 
 import Foundation
 
+// sourcery: AutoMockable
 protocol AddTransactionPresenterProtocol: AnyObject {
     func viewDidLoad()
     func cancelAction()

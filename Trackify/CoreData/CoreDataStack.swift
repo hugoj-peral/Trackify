@@ -12,6 +12,7 @@ import CoreData
 protocol CoreDataProvider {
     var persistentContainer: NSPersistentContainer { get }
     func saveContext ()
+    func asynchronousFetch(entityName: String, completion: ((NSAsynchronousFetchResult<NSFetchRequestResult>) -> Void)?)
 }
 
 final class CoreDataStack: CoreDataProvider {
@@ -65,4 +66,13 @@ final class CoreDataStack: CoreDataProvider {
         }
     }
 
+    func asynchronousFetch(entityName: String, completion: ((NSAsynchronousFetchResult<NSFetchRequestResult>) -> Void)?) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let asyncFetchRequest = NSAsynchronousFetchRequest.init(fetchRequest: fetchRequest, completionBlock: completion)
+        do {
+            try persistentContainer.viewContext.execute(asyncFetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
 }

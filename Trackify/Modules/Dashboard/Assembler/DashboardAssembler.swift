@@ -12,7 +12,7 @@ protocol DashboardAssembler {
     func resolve(router: DashboardRouter, interactor: DashboardInteractor) -> DashboardPresenter
     func resolve() -> DashboardRouter
     func resolve() -> DashboardInteractor
-    func resolve() -> DashboardDatamanager
+    func resolve(coreDataStack: CoreDataProvider) -> DashboardDatamanager
 }
 
 extension DashboardAssembler {
@@ -40,7 +40,7 @@ extension DashboardAssembler {
         return DashboardInteractor(datamanager: resolve())
     }
     
-    func resolve() -> DashboardDatamanager{
+    func resolve(coreDataStack: CoreDataProvider = CoreDataStack.shared) -> DashboardDatamanager{
         return DashboardDatamanager(coreDataStack: CoreDataStack.shared)
     }
 }
