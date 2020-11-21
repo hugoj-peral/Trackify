@@ -49,4 +49,16 @@ extension AddTransactionPresenter: AddTransactionPresenterProtocol {
     func amountSelected(amount: String) {
         
     }
+    
+    func numberOfItemsToPick() -> Int {
+        return 3
+    }
+    
+    func pickerItem(row: Int) -> String {
+        return "Hello"
+    }
+    
+    func pickerItemSelected(row: Int) {
+        
+    }
 }

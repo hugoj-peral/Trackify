@@ -15,4 +15,7 @@ protocol AddTransactionPresenterProtocol: AnyObject {
     func selectAccountAction()
     func selectCategoryAction()
     func amountSelected(amount: String)
+    func numberOfItemsToPick() -> Int
+    func pickerItem(row: Int) -> String
+    func pickerItemSelected(row: Int)
 }

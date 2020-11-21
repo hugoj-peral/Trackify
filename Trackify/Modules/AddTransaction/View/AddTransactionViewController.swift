@@ -17,16 +17,14 @@ final class AddTransactionViewController: UIViewController {
         return segmentedControl
     }()
     
-    let accountButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(selectAccountTapped), for: .touchUpInside)
-        return button
+    let accountTextField: UITextField = {
+        let textField = UITextField()
+        return textField
     }()
     
-    let categoryButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(selectCategory), for: .touchUpInside)
-        return button
+    let categoryTextField: UITextField = {
+        let textField = UITextField()
+        return textField
     }()
     
     let amountTextfield: UITextField = {
@@ -56,6 +54,7 @@ final class AddTransactionViewController: UIViewController {
         view.backgroundColor = .white
         addNavigationItems()
         addStackView()
+        setupTextFields()
         hideKeyboardWhenTappedAround()
     }
     
@@ -66,7 +65,7 @@ final class AddTransactionViewController: UIViewController {
     }
     
     func addStackView() {
-        let stackview = UIStackView(arrangedSubviews: [transactionType, accountButton, categoryButton, amountTextfield])
+        let stackview = UIStackView(arrangedSubviews: [transactionType, accountTextField, categoryTextField, amountTextfield])
         stackview.axis = .vertical
         stackview.spacing = 16
         
@@ -76,16 +75,46 @@ final class AddTransactionViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackview.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 32),
             stackview.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -32),
-            stackview.topAnchor.constraint(equalTo: guide.topAnchor, constant: 32),
+            stackview.topAnchor.constraint(equalTo: guide.topAnchor, constant: 32)
         ])
     }
     
+    func setupTextFields() {
+        amountTextfield.inputAccessoryView = makeToolBar()
+        categoryTextField.inputView = makePickerView()
+        categoryTextField.inputAccessoryView = makeToolBar()
+        categoryTextField.delegate = self
+        accountTextField.inputView = makePickerView()
+        accountTextField.inputAccessoryView = makeToolBar()
+        accountTextField.delegate = self
+    }
+    
+    func makePickerView() -> UIPickerView {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }
+    
+    func makeToolBar() -> UIToolbar {
+        let toolBar = UIToolbar(frame:CGRect(x:0, y:0, width:100, height:100))
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.translatesAutoresizingMaskIntoConstraints = false
+        return toolBar
+    }
+    
     func hideKeyboardWhenTappedAround() {
-
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-
      }
     
     // MARK: IBActions
@@ -105,15 +134,7 @@ final class AddTransactionViewController: UIViewController {
         presenter.categoryTypeSelected(type: transactionType.selectedSegmentIndex == 0 ? .income : .expense)
     }
     
-    @IBAction func selectAccountTapped(_ sender: Any) {
-        presenter.selectAccountAction()
-    }
-    
-    @IBAction func selectCategory(_ sender: Any) {
-        presenter.selectCategoryAction()
-    }
-    
-    @objc func dismissKeyboard() {
+    @objc func dismissKeyboard(_ sender: Any) {
            view.endEditing(true)
      }
 }
@@ -129,8 +150,8 @@ extension AddTransactionViewController: AddTransactionViewProtocol {
                         amount: String) {
         transactionType.setTitle(incomingCategory.incoming, forSegmentAt: 0)
         transactionType.setTitle(incomingCategory.expense, forSegmentAt: 1)
-        accountButton.setTitle(account, for: .normal)
-        categoryButton.setTitle(category, for: .normal)
+        accountTextField.placeholder = account
+        categoryTextField.placeholder = category
         amountTextfield.placeholder = amount
     }
     
@@ -144,10 +165,45 @@ extension AddTransactionViewController: AddTransactionViewProtocol {
     }
     
     func setSelectedAccount(_ account: String) {
-        accountButton.setTitle(account, for: .normal)
+        accountTextField.text = account
     }
     
     func setSelectedCategory(_ category: String) {
-        categoryButton.setTitle(category, for: .normal)
+        categoryTextField.text = category
+    }
+}
+
+extension AddTransactionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return presenter.numberOfItemsToPick()
+    }
+}
+
+extension AddTransactionViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return presenter.pickerItem(row: row)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        presenter.pickerItemSelected(row: row)
+    }
+}
+
+extension AddTransactionViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == accountTextField {
+            presenter.selectAccountAction()
+        } else if textField == categoryTextField {
+            presenter.selectCategoryAction()
+        }
+        return true
     }
 }
