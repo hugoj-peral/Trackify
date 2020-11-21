@@ -8,11 +8,17 @@
 import UIKit
 
 protocol NavigableView: AnyObject {
-    func present(view: NavigableView)
+    func presentEmbebed(view: NavigableView)
+    func dismiss(completion: (() -> Void)?)
+
 }
 
 extension UIViewController: NavigableView {
-    func present(view: NavigableView) {
-        present(view as! UIViewController, animated: true, completion: nil)
+    func presentEmbebed(view: NavigableView) {
+        present(UINavigationController(rootViewController: view as! UIViewController), animated: true, completion: nil)
+    }
+    
+    func dismiss(completion: (() -> Void)?) {
+        dismiss(animated: true, completion: completion)
     }
 }

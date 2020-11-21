@@ -9,10 +9,14 @@ import Foundation
 
 class DashboardRouter {
     weak var view: NavigableView?
+    weak var presenter: DashboardPresenterProtocol?
 }
 
 extension DashboardRouter: DashboardRouterProtocol {
     func routeToAddTransaction() {
-        print("Add new transaction")
+        let addTransactionView: AddTransactionViewController = AppAssembler().resolve { [weak self] in
+            self?.presenter?.refreshData()
+        }
+        view?.presentEmbebed(view: addTransactionView)
     }
 }

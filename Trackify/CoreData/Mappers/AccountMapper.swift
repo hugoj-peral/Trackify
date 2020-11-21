@@ -15,7 +15,7 @@ class AccountMapper {
     
     func map(_ accountMO: AccountMO) -> Account {
         let mapper = TransactionMapper()
-        let transactions = accountMO.transactions!.map { mapper.map($0 as! TransactionMO) }
+        let transactions = accountMO.transactions!.map({ mapper.map($0 as! TransactionMO) }).sorted { $0.date > $1.date }
         
         return Account(id: accountMO.id!,
                        name: accountMO.name!,

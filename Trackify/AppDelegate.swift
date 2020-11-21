@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dashboardController: DashboardViewController = AppAssembler().resolve()
         let navigationController = UINavigationController(rootViewController: dashboardController)
         window = window ?? UIWindow.makeWindow(frame: UIScreen.main.bounds, rootViewController: navigationController)
+        window?.backgroundColor = .black
         window?.makeKeyAndVisible()
         
         return true

@@ -39,7 +39,7 @@ class DashboardPresenterTest: XCTestCase {
         XCTAssert(view.setViewTitleReceivedTitle == "dashboard_title".localized)
     }
 
-    func testViewDidLoad_Refresh() {
+    func testViewDidLoad_LoadDashboard() {
         sut.viewDidLoad()
         
         XCTAssert(interactor.loadDashboardCalled)

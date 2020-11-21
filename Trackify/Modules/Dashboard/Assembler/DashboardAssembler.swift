@@ -23,6 +23,7 @@ extension DashboardAssembler {
         let view: DashboardViewController = DashboardViewController(presenter: presenter)
         presenter.view = view
         router.view = view
+        router.presenter = presenter
         interactor.presenter = presenter
         return view
     }
