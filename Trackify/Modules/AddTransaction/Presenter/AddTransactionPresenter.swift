@@ -11,14 +11,15 @@ final class AddTransactionPresenter {
     
     weak var view: AddTransactionViewProtocol?
     let router: AddTransactionRouterProtocol
+    let interactor: AddTransactionInteractorInputProtocol
     
     var categoryTypeSelected: CategoryType = .income
     var accountSelected: Account?
     var categorySelected: Category?
     var amountSelected: Double?
     
-    var listOfCategories = DashboardRandomGenerator().makeAllCategories()
-    var listOfAccounts =  DashboardRandomGenerator().makeAllAccounts(transactionDistribution: [:])
+    var listOfCategories: [Category]!
+    var listOfAccounts: [Account]!
     
     // MARK : List variables
     enum ListOption {
@@ -27,15 +28,17 @@ final class AddTransactionPresenter {
     var listSelected: ListOption!
     var listDataSource: [String]!
     
-    init(router: AddTransactionRouterProtocol) {
+    init(router: AddTransactionRouterProtocol, interactor: AddTransactionInteractorInputProtocol) {
         self.router = router
+        self.interactor = interactor
     }
     
     func validateData() {
         guard let amount = amountSelected,
               let category = categorySelected,
               let account = accountSelected else { return }
-        router.doneDismiss()
+        
+        interactor.saveTransaction(categoryType: categoryTypeSelected, account: account, category: category, amount: amount)
     }
 }
 
@@ -47,6 +50,7 @@ extension AddTransactionPresenter: AddTransactionPresenterProtocol {
                              category: "select_category".localized,
                              amount: "enter_amount".localized)
         view?.setCategoryTransaction(category: .income)
+        interactor.loadSelectionData()
     }
     
     func cancelAction() {
@@ -104,5 +108,16 @@ extension AddTransactionPresenter: AddTransactionPresenterProtocol {
         default:
             break
         }
+    }
+}
+
+extension AddTransactionPresenter: AddTransactionInteractorOutputProtocol {
+    func selectionDataLoaded(data: (accounts: [Account], categories: [Category])) {
+        listOfAccounts = data.accounts
+        listOfCategories = data.categories
+    }
+    
+    func transactionSaved() {
+        router.doneDismiss()
     }
 }

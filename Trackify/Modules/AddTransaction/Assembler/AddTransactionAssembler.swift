@@ -10,16 +10,19 @@ import Foundation
 protocol AddTransactionAssembler {
     func resolve(completion: (() -> Void)?) -> AddTransactionViewController
     func resolve(completion: (() -> Void)?) -> AddTransactionRouter
-    func resolve(router: AddTransactionRouter) -> AddTransactionPresenter
+    func resolve(router: AddTransactionRouter, interactor: AddTransactionInteractor) -> AddTransactionPresenter
+    func resolve() -> AddTransactionInteractor
 }
 
 extension AddTransactionAssembler {
     func resolve(completion: (() -> Void)?) -> AddTransactionViewController {
         let router: AddTransactionRouter = resolve(completion: completion)
-        let presenter: AddTransactionPresenter = resolve(router: router)
+        let interactor: AddTransactionInteractor = resolve()
+        let presenter: AddTransactionPresenter = resolve(router: router, interactor: interactor)
         let view = AddTransactionViewController(presenter: presenter)
         presenter.view = view
         router.view = view
+        interactor.presenter = presenter
         
         return view
     }
@@ -28,7 +31,11 @@ extension AddTransactionAssembler {
         return AddTransactionRouter(completion: completion)
     }
     
-    func resolve(router: AddTransactionRouter) -> AddTransactionPresenter {
-        return AddTransactionPresenter(router: router)
+    func resolve(router: AddTransactionRouter, interactor: AddTransactionInteractor) -> AddTransactionPresenter {
+        return AddTransactionPresenter(router: router, interactor: interactor)
+    }
+    
+    func resolve() -> AddTransactionInteractor {
+        return AddTransactionInteractor()
     }
 }
