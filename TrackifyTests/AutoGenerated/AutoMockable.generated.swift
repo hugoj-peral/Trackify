@@ -159,6 +159,19 @@ class DashboardPresenterProtocolMock: DashboardPresenterProtocol {
         viewDidLoadClosure?()
     }
 
+    //MARK: - refreshData
+
+    var refreshDataCallsCount = 0
+    var refreshDataCalled: Bool {
+        return refreshDataCallsCount > 0
+    }
+    var refreshDataClosure: (() -> Void)?
+
+    func refreshData() {
+        refreshDataCallsCount += 1
+        refreshDataClosure?()
+    }
+
     //MARK: - numberOfMoneyAccounts
 
     var numberOfMoneyAccountsCallsCount = 0

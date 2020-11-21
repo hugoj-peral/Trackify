@@ -7,7 +7,10 @@
 
 import UIKit
 
-class AddTransactionViewController: UIViewController {
+final class AddTransactionViewController: UIViewController {
+    
+    let presenter: AddTransactionPresenterProtocol
+    
     let transactionType: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Income", "Expense"])
         return segmentedControl
@@ -18,6 +21,15 @@ class AddTransactionViewController: UIViewController {
         button.setTitle("Select account", for: .normal)
         return button
     }()
+    
+    init(presenter: AddTransactionPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +67,14 @@ class AddTransactionViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func doneTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        presenter.doneAction()
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        presenter.cancelAction()
     }
+}
+
+extension AddTransactionViewController: AddTransactionViewProtocol {
+    
 }

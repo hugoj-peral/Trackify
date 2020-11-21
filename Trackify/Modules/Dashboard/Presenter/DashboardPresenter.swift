@@ -27,6 +27,10 @@ extension DashboardPresenter: DashboardPresenterProtocol {
         interactor.loadDashboard()
     }
     
+    func refreshData() {
+        interactor.loadDashboard()
+    }
+    
     func numberOfMoneyAccounts() -> Int {
         return dashboard.accounts.count
     }

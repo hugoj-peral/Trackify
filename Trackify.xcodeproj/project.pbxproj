@@ -23,6 +23,12 @@
 		9A9FE4D3256680C100861719 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A9FE4D1256680C100861719 /* Localizable.strings */; };
 		9A9FE4D82566817000861719 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FE4D72566817000861719 /* String+Localized.swift */; };
 		9AA5B9942568552F005B2E46 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9932568552F005B2E46 /* AddTransactionViewController.swift */; };
+		9AA5B9A125686310005B2E46 /* AddTransactionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9A025686310005B2E46 /* AddTransactionRouter.swift */; };
+		9AA5B9A72568631D005B2E46 /* AddTransactionRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9A62568631D005B2E46 /* AddTransactionRouterProtocol.swift */; };
+		9AA5B9AB25686451005B2E46 /* AddTransactionAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9AA25686451005B2E46 /* AddTransactionAssembler.swift */; };
+		9AA5B9B2256865A4005B2E46 /* AddTransactionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9B1256865A4005B2E46 /* AddTransactionViewProtocol.swift */; };
+		9AA5B9BA256865C8005B2E46 /* AddTransactionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9B9256865C8005B2E46 /* AddTransactionPresenterProtocol.swift */; };
+		9AA5B9BE256865D9005B2E46 /* AddTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5B9BD256865D9005B2E46 /* AddTransactionPresenter.swift */; };
 		9AC6CD3D2566895B002DCDE4 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD3C2566895B002DCDE4 /* AutoMockable.generated.swift */; };
 		9AC6CD4D25668A54002DCDE4 /* AutoMockable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 9AC6CD4C25668A54002DCDE4 /* AutoMockable.stencil */; };
 		9AC6CD5625668B51002DCDE4 /* DashboardPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */; };
@@ -89,6 +95,12 @@
 		9A9FE4D2256680C100861719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9A9FE4D72566817000861719 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		9AA5B9932568552F005B2E46 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		9AA5B9A025686310005B2E46 /* AddTransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouter.swift; sourceTree = "<group>"; };
+		9AA5B9A62568631D005B2E46 /* AddTransactionRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionRouterProtocol.swift; sourceTree = "<group>"; };
+		9AA5B9AA25686451005B2E46 /* AddTransactionAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionAssembler.swift; sourceTree = "<group>"; };
+		9AA5B9B1256865A4005B2E46 /* AddTransactionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewProtocol.swift; sourceTree = "<group>"; };
+		9AA5B9B9256865C8005B2E46 /* AddTransactionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenterProtocol.swift; sourceTree = "<group>"; };
+		9AA5B9BD256865D9005B2E46 /* AddTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionPresenter.swift; sourceTree = "<group>"; };
 		9AC6CD3C2566895B002DCDE4 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		9AC6CD4C25668A54002DCDE4 /* AutoMockable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
 		9AC6CD5525668B51002DCDE4 /* DashboardPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterTest.swift; sourceTree = "<group>"; };
@@ -274,7 +286,10 @@
 		9AA5B991256854D8005B2E46 /* AddTransaction */ = {
 			isa = PBXGroup;
 			children = (
+				9AA5B99E256862D0005B2E46 /* Assembler */,
+				9AA5B99F256862DD005B2E46 /* Router */,
 				9AA5B99225685501005B2E46 /* View */,
+				9AA5B9B025686573005B2E46 /* Presenter */,
 			);
 			path = AddTransaction;
 			sourceTree = "<group>";
@@ -282,9 +297,36 @@
 		9AA5B99225685501005B2E46 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AA5B9B1256865A4005B2E46 /* AddTransactionViewProtocol.swift */,
 				9AA5B9932568552F005B2E46 /* AddTransactionViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9AA5B99E256862D0005B2E46 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				9AA5B9AA25686451005B2E46 /* AddTransactionAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		9AA5B99F256862DD005B2E46 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9AA5B9A62568631D005B2E46 /* AddTransactionRouterProtocol.swift */,
+				9AA5B9A025686310005B2E46 /* AddTransactionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9AA5B9B025686573005B2E46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9AA5B9B9256865C8005B2E46 /* AddTransactionPresenterProtocol.swift */,
+				9AA5B9BD256865D9005B2E46 /* AddTransactionPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		9ABA80AD256684E000561B30 /* AutoGenerated */ = {
@@ -579,9 +621,11 @@
 				9AC6CE1425684156002DCDE4 /* AccountMapper.swift in Sources */,
 				9AC6CE182568416F002DCDE4 /* TransactionMapper.swift in Sources */,
 				9AC6CDA82567BB1D002DCDE4 /* Category.swift in Sources */,
+				9AA5B9A72568631D005B2E46 /* AddTransactionRouterProtocol.swift in Sources */,
 				9AA5B9942568552F005B2E46 /* AddTransactionViewController.swift in Sources */,
 				9AC6CD922567B1FC002DCDE4 /* DashboardInteractor.swift in Sources */,
 				9AC6CDB02567BBF7002DCDE4 /* Transaction.swift in Sources */,
+				9AA5B9BA256865C8005B2E46 /* AddTransactionPresenterProtocol.swift in Sources */,
 				9AC6CD762566A5C9002DCDE4 /* DashboardCell.swift in Sources */,
 				9AC6CDE82567F376002DCDE4 /* DashboardDatamanagerProtocol.swift in Sources */,
 				9A9FE4BE25666E7C00861719 /* DashboardViewProtocol.swift in Sources */,
@@ -596,16 +640,20 @@
 				9AC6CDEF256814CC002DCDE4 /* PopulateDataManager.swift in Sources */,
 				9AC6CD8B2566DC18002DCDE4 /* DashboardRouter.swift in Sources */,
 				9AC6CD872566DC06002DCDE4 /* DashboardRouterProtocol.swift in Sources */,
+				9AA5B9A125686310005B2E46 /* AddTransactionRouter.swift in Sources */,
+				9AA5B9BE256865D9005B2E46 /* AddTransactionPresenter.swift in Sources */,
 				9A9FE4D82566817000861719 /* String+Localized.swift in Sources */,
 				9AC6CD802566D66D002DCDE4 /* UIViewController+NavigableView.swift in Sources */,
 				9AC6CDE22567F368002DCDE4 /* DashboardDatamanager.swift in Sources */,
 				9AC6CD6D25669905002DCDE4 /* DashboardHeader.swift in Sources */,
 				9A9FE4BA25666DE100861719 /* DashboardPresenterProtocol.swift in Sources */,
 				9A9FE4A4256668AE00861719 /* DashboardViewController.swift in Sources */,
+				9AA5B9B2256865A4005B2E46 /* AddTransactionViewProtocol.swift in Sources */,
 				9AC6CD982567B20B002DCDE4 /* DashboardInteractorProtocol.swift in Sources */,
 				9AC6CDD12567E9D3002DCDE4 /* NumberFormatter+Custom.swift in Sources */,
 				9AC6CDD52567E9ED002DCDE4 /* DateFormatter+Custom.swift in Sources */,
 				9A9FE4B425666BA300861719 /* AppAssembler.swift in Sources */,
+				9AA5B9AB25686451005B2E46 /* AddTransactionAssembler.swift in Sources */,
 				9A9FE4AB25666A0900861719 /* UIWindow+Factory.swift in Sources */,
 				9A0394FC2566614C00574C13 /* Trackify.xcdatamodeld in Sources */,
 				9A03953C2566641500574C13 /* CoreDataStack.swift in Sources */,

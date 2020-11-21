@@ -10,6 +10,7 @@ import Foundation
 // sourcery: AutoMockable
 protocol DashboardPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func refreshData()
     func numberOfMoneyAccounts() -> Int
     func numberOfTransactionsPerMoneyAccount(section: Int) -> Int
     func fill(header: DashboardHeaderRepresentable, section: Int)

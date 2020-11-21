@@ -14,7 +14,7 @@ protocol CoreDataProvider {
     func saveContext ()
 }
 
-class CoreDataStack: CoreDataProvider {
+final class CoreDataStack: CoreDataProvider {
     
     static let shared = CoreDataStack()
     
