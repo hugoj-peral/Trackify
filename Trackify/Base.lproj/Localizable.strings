@@ -6,3 +6,9 @@
   
 */
 "dashboard_title" = "Dashboard";
+"add_transaction_title" = "Add transaction";
+"income" = "Income";
+"expense" = "Expense";
+"select_account" = "Select account";
+"select_category" = "Select category";
+"enter_amount" = "Enter amount";

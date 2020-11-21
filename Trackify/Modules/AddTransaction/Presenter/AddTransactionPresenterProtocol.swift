@@ -8,6 +8,11 @@
 import Foundation
 
 protocol AddTransactionPresenterProtocol: AnyObject {
+    func viewDidLoad()
     func cancelAction()
     func doneAction()
+    func categoryTypeSelected(type: CategoryType)
+    func selectAccountAction()
+    func selectCategoryAction()
+    func amountSelected(amount: String)
 }

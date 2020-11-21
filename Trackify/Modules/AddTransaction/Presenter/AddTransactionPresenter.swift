@@ -17,11 +17,36 @@ final class AddTransactionPresenter {
 }
 
 extension AddTransactionPresenter: AddTransactionPresenterProtocol {
+    func viewDidLoad() {
+        view?.setViewTitle("add_transaction_title".localized)
+        view?.setTextContent(incomingCategory: (incoming: "incoming".localized, expense: "expense".localized),
+                             account: "select_account".localized,
+                             category: "select_category".localized,
+                             amount: "enter_amount".localized)
+        view?.setCategoryTransaction(category: .income)
+    }
+    
     func cancelAction() {
         router.cancelDismiss()
     }
     
     func doneAction() {
         router.doneDismiss()
+    }
+    
+    func categoryTypeSelected(type: CategoryType) {
+        
+    }
+    
+    func selectAccountAction() {
+        
+    }
+    
+    func selectCategoryAction() {
+        
+    }
+    
+    func amountSelected(amount: String) {
+        
     }
 }
